@@ -36,10 +36,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjS-Mq-Pc1">
-                                                    <rect key="frame" x="0.0" y="26" width="91" height="21"/>
+                                                    <rect key="frame" x="0.0" y="26" width="181" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="b0Z-FO-nce"/>
-                                                        <constraint firstAttribute="width" constant="91" id="uZu-Mz-5gf"/>
+                                                        <constraint firstAttribute="width" constant="181" id="9F8-Qg-NQw"/>
+                                                        <constraint firstAttribute="height" constant="21" id="opi-wQ-gUM"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -208,10 +208,10 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ff7-QE-rYr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="181" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="dV9-0d-E6B"/>
-                                                        <constraint firstAttribute="width" constant="75" id="ovF-e9-5rq"/>
+                                                        <constraint firstAttribute="width" constant="181" id="WyA-4s-Pxi"/>
+                                                        <constraint firstAttribute="height" constant="21" id="jsO-3H-cA7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -219,14 +219,14 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="MlU-sk-Gey" firstAttribute="top" secondItem="tjS-Mq-Pc1" secondAttribute="bottom" constant="10" id="F7O-qN-5P8"/>
-                                                <constraint firstItem="tjS-Mq-Pc1" firstAttribute="top" secondItem="ff7-QE-rYr" secondAttribute="bottom" constant="5" id="Lai-Bj-Qmp"/>
-                                                <constraint firstItem="ff7-QE-rYr" firstAttribute="leading" secondItem="oUD-SG-51g" secondAttribute="leading" id="MQM-dw-bPz"/>
-                                                <constraint firstItem="ff7-QE-rYr" firstAttribute="top" secondItem="oUD-SG-51g" secondAttribute="top" id="Tlz-CD-Kjz"/>
+                                                <constraint firstItem="ff7-QE-rYr" firstAttribute="leading" secondItem="oUD-SG-51g" secondAttribute="leading" id="370-0n-tys"/>
+                                                <constraint firstItem="ff7-QE-rYr" firstAttribute="top" secondItem="oUD-SG-51g" secondAttribute="top" id="41b-vj-Pox"/>
                                                 <constraint firstAttribute="trailing" secondItem="MlU-sk-Gey" secondAttribute="trailing" id="gTh-28-kqJ"/>
+                                                <constraint firstItem="MlU-sk-Gey" firstAttribute="top" secondItem="tjS-Mq-Pc1" secondAttribute="bottom" constant="10" id="gxv-bs-dEl"/>
                                                 <constraint firstItem="MlU-sk-Gey" firstAttribute="leading" secondItem="oUD-SG-51g" secondAttribute="leading" id="hpK-iH-vQC"/>
                                                 <constraint firstAttribute="bottom" secondItem="MlU-sk-Gey" secondAttribute="bottom" id="lP9-2g-kds"/>
-                                                <constraint firstItem="tjS-Mq-Pc1" firstAttribute="leading" secondItem="oUD-SG-51g" secondAttribute="leading" id="y35-Z1-XvY"/>
+                                                <constraint firstItem="tjS-Mq-Pc1" firstAttribute="top" secondItem="ff7-QE-rYr" secondAttribute="bottom" constant="5" id="qVg-8v-Pjk"/>
+                                                <constraint firstItem="tjS-Mq-Pc1" firstAttribute="leading" secondItem="oUD-SG-51g" secondAttribute="leading" id="yuG-6w-MJP"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="396" height="439"/>
