@@ -7,15 +7,44 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    let genreSingleton = Genre.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        genreAPI()
         // Override point for customization after application launch.
         return true
     }
+    
+    func genreAPI() {
+
+    let url = "\(EndPoint.genreURL)api_key=\(APIKey.TMDB)"
+    
+    
+    //접두어 -> AF 알라모파이어에서 url주소로 들어가고 get 방식 유효성 검사(상태코드) 실행 ex) 200 = 성공 response 데이터 가져오겠다
+    AF.request(url, method: .get).validate().responseJSON { response in
+        switch response.result {
+        case .success(let value):
+            let json = JSON(value)
+            print("JSON: \(json)")
+            
+            for mv in json["genres"] {
+                let poster = mv.1["id"].intValue
+                let overview = mv.1["name"].stringValue
+                
+                self.genreSingleton.genre[poster] = overview
+            }
+            print("done")
+        case .failure(let error):
+            print(error)
+        }
+    }
+}
 
     // MARK: UISceneSession Lifecycle
 
