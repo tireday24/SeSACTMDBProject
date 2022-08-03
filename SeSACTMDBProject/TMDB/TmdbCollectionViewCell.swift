@@ -24,16 +24,22 @@ class TmdbCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var barView: UIView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var detailLabelView: UILabel!
-    
+    @IBOutlet weak var clipBackgroundView: UIView!
     
     
     func configure() {
+        curveView.clipsToBounds = true
+        curveView.layer.cornerRadius = 5
+        shadowView.layer.cornerRadius = 5
         shadowView.clipsToBounds = true
-        shadowView.layer.cornerRadius = 20
-        curveView.layer.borderColor = UIColor.black.cgColor
-        curveView.layer.shadowOpacity = 0.8
-        curveView.layer.shadowPath = nil
-        curveView.layer.shadowOffset = .init(width: -20, height: -10)
-        curveView.layer.shadowRadius = 20
+        shadowView.layer.borderColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 0.8
+        shadowView.layer.shadowPath = nil
+        shadowView.layer.shadowOffset = .init(width: -20, height: -10)
+        shadowView.layer.shadowRadius = 20
+        clipBackgroundView.layer.cornerRadius = clipBackgroundView.frame.height / 2
+        clipBackgroundView.layer.borderWidth = 1
+        clipBackgroundView.clipsToBounds = true
+        
     }
 }
