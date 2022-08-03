@@ -25,7 +25,7 @@ class TmdbCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var detailLabelView: UILabel!
     @IBOutlet weak var clipBackgroundView: UIView!
-    
+    @IBOutlet weak var gradeStackView: UIStackView!
     
     func configure() {
         curveView.clipsToBounds = true
@@ -40,6 +40,7 @@ class TmdbCollectionViewCell: UICollectionViewCell {
         clipBackgroundView.layer.cornerRadius = clipBackgroundView.frame.height / 2
         clipBackgroundView.layer.borderWidth = 1
         clipBackgroundView.clipsToBounds = true
+        gradeStackView.layer.borderWidth = 1
         
     }
 }
