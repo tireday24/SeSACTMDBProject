@@ -16,6 +16,9 @@
 		81BEFFB22899F7D300CE5B79 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 81BEFFB12899F7D300CE5B79 /* .gitignore */; };
 		81BEFFB42899F82400CE5B79 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEFFB32899F82400CE5B79 /* SearchViewController.swift */; };
 		81BEFFB62899F88E00CE5B79 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEFFB52899F88E00CE5B79 /* APIKey.swift */; };
+		81BEFFB82899F9BB00CE5B79 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEFFB72899F9BB00CE5B79 /* Constant.swift */; };
+		81BEFFBC2899FAA600CE5B79 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEFFBB2899FAA600CE5B79 /* Example.swift */; };
+		81BEFFBE2899FABC00CE5B79 /* Example2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEFFBD2899FABC00CE5B79 /* Example2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +32,10 @@
 		81BEFFAB2899F6B600CE5B79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BEFFB12899F7D300CE5B79 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		81BEFFB32899F82400CE5B79 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		81BEFFB52899F88E00CE5B79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = SOURCE_ROOT; };
+		81BEFFB52899F88E00CE5B79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = SeSACTMDBProject/Resource/APIKey.swift; sourceTree = SOURCE_ROOT; };
+		81BEFFB72899F9BB00CE5B79 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = SOURCE_ROOT; };
+		81BEFFBB2899FAA600CE5B79 /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
+		81BEFFBD2899FABC00CE5B79 /* Example2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 		81BEFF9C2899F6B600CE5B79 /* SeSACTMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				81BEFFBA2899FA8900CE5B79 /* Key */,
+				81BEFFB92899FA1400CE5B79 /* Resource */,
+				81BEFFB72899F9BB00CE5B79 /* Constant.swift */,
 				81BEFF9D2899F6B600CE5B79 /* AppDelegate.swift */,
 				81BEFF9F2899F6B600CE5B79 /* SceneDelegate.swift */,
 				81BEFFA12899F6B600CE5B79 /* ViewController.swift */,
@@ -71,9 +80,25 @@
 				81BEFFA82899F6B600CE5B79 /* LaunchScreen.storyboard */,
 				81BEFFAB2899F6B600CE5B79 /* Info.plist */,
 				81BEFFB32899F82400CE5B79 /* SearchViewController.swift */,
-				81BEFFB52899F88E00CE5B79 /* APIKey.swift */,
 			);
 			path = SeSACTMDBProject;
+			sourceTree = "<group>";
+		};
+		81BEFFB92899FA1400CE5B79 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				81BEFFBD2899FABC00CE5B79 /* Example2.swift */,
+				81BEFFB52899F88E00CE5B79 /* APIKey.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		81BEFFBA2899FA8900CE5B79 /* Key */ = {
+			isa = PBXGroup;
+			children = (
+				81BEFFBB2899FAA600CE5B79 /* Example.swift */,
+			);
+			path = Key;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,10 +174,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				81BEFFA22899F6B600CE5B79 /* ViewController.swift in Sources */,
+				81BEFFBC2899FAA600CE5B79 /* Example.swift in Sources */,
 				81BEFF9E2899F6B600CE5B79 /* AppDelegate.swift in Sources */,
 				81BEFFB42899F82400CE5B79 /* SearchViewController.swift in Sources */,
 				81BEFFA02899F6B600CE5B79 /* SceneDelegate.swift in Sources */,
 				81BEFFB62899F88E00CE5B79 /* APIKey.swift in Sources */,
+				81BEFFB82899F9BB00CE5B79 /* Constant.swift in Sources */,
+				81BEFFBE2899FABC00CE5B79 /* Example2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
