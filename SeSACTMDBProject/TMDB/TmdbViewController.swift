@@ -11,54 +11,32 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-class TmdbViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class TmdbViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     var movieList: [TmdbInfo] = []
     let genreSingleton = Genre.shared
+    var startPage = 1
+    var totalCount = 0
+    var requestId = 0
+    var requestOverview = ""
+    var requestImg = ""
+    var backgroundImg = ""
+    var posterImg = ""
+    var actorTitle = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(genreSingleton.genre, "ffffffffffff")
         naviBarButtonDesign()
         requestAPI()
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.prefetchDataSource = self
+        
         layout()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieList.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TmdbCollectionViewCell.identifier, for: indexPath) as? TmdbCollectionViewCell else { return UICollectionViewCell()}
-        
-        cell.releaseDataLabel.text = movieList[indexPath.item].releaseDate
-        
-        var genreArray: [String] = []
-        
-        for i in movieList[indexPath.item].genre{
-            genreArray.append(genreSingleton.genre[i] ?? "none")
-            
-        }
-        cell.genreLabel.text = genreArray.formatted()
-        
-        let url = URL(string: "\(EndPoint.imgURL)\(movieList[indexPath.item].moviePoster)")
-        cell.posterImageView.kf.setImage(with: url)
-    
-        cell.gradeViewLable.text = movieList[indexPath.item].voteAverage
-        cell.movieNameLabel.text = movieList[indexPath.item].movieTitle
-        cell.overViewLabel.text = movieList[indexPath.item].overview
-        
-        let data = movieList[indexPath.item]
-        cell.configure()
-        
-        return cell
-    }
-    
 
     func naviBarButtonDesign() {
         let item = navigationItem
@@ -98,7 +76,7 @@ class TmdbViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func requestAPI() {
 
-    let url = "\(EndPoint.TMDBURL)api_key=\(APIKey.TMDB)"
+    let url = "\(EndPoint.TMDBURL)api_key=\(APIKey.TMDB)&page=\(startPage)"
     
     
     //접두어 -> AF 알라모파이어에서 url주소로 들어가고 get 방식 유효성 검사(상태코드) 실행 ex) 200 = 성공 response 데이터 가져오겠다
@@ -108,16 +86,23 @@ class TmdbViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let json = JSON(value)
             print("JSON: \(json)")
             
+            self.totalCount = json["total_pages"].intValue
+            
             for mv in json["results"] {
+                
                 let poster = mv.1["poster_path"].stringValue
                 let overview = mv.1["overview"].stringValue
                 let grade = mv.1["vote_average"].doubleValue
                 let genre = mv.1["genre_ids"].arrayObject as! [Int]
                 let date = mv.1["release_date"].stringValue
                 let title = mv.1["title"].stringValue
+                let id = mv.1["id"].intValue
+                let bgImg = mv.1["backdrop_path"].stringValue
+                let posterImg = mv.1["poster_path"].stringValue
+                let acTitle = mv.1["title"].stringValue
                 
                 
-                let info = TmdbInfo(releaseDate: date, movieTitle: title, moviePoster: poster, voteAverage: "\(round(grade * 100) / 100.0)", overview: overview, genre: genre)
+                let info = TmdbInfo(releaseDate: date, movieTitle: title, moviePoster: poster, voteAverage: "\(round(grade * 100) / 100.0)", overview: overview, genre: genre, id: id, backgroundImg: bgImg, posterImg: posterImg, actorTitle: acTitle)
                 
                 self.movieList.append(info)
             }
@@ -140,4 +125,67 @@ class TmdbViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
 }
 
+extension TmdbViewController:  UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movieList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TmdbCollectionViewCell.identifier, for: indexPath) as? TmdbCollectionViewCell else { return UICollectionViewCell()}
+        
+        cell.releaseDataLabel.text = movieList[indexPath.item].releaseDate
+        
+        var genreArray: [String] = []
+        
+        for i in movieList[indexPath.item].genre{
+            genreArray.append(genreSingleton.genre[i] ?? "none")
+            
+        }
+        cell.genreLabel.text = genreArray.formatted()
+        
+        let url = URL(string: "\(EndPoint.imgURL)\(movieList[indexPath.item].moviePoster)")
+        cell.posterImageView.kf.setImage(with: url)
+    
+        cell.gradeViewLable.text = movieList[indexPath.item].voteAverage
+        cell.movieNameLabel.text = movieList[indexPath.item].movieTitle
+        cell.overViewLabel.text = movieList[indexPath.item].overview
+        
+        let data = movieList[indexPath.item]
+        cell.configure()
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Cast", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: CastViewController.identifier) as? CastViewController else {return}
+        vc.castId = movieList[indexPath.item].id
+        vc.castOverview = movieList[indexPath.item].overview
+        vc.bgUrl = movieList[indexPath.item].backgroundImg
+        vc.posterUrl = movieList[indexPath.item].posterImg
+        vc.castTitle = movieList[indexPath.item].actorTitle
+        vc.castImg = movieList[indexPath.item].moviePoster
+         let nv = UINavigationController(rootViewController: vc)
+         nv.modalPresentationStyle = .fullScreen
+         self.present(nv, animated: true)
+    }
+    
+}
 
+extension TmdbViewController: UICollectionViewDataSourcePrefetching {
+
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        
+    
+        for indexPath in indexPaths {
+            if movieList.count - 1 == indexPath.item && movieList.count < totalCount{
+                startPage += 1
+                requestAPI()
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        
+    }
+}

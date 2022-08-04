@@ -14,4 +14,8 @@ struct TmdbInfo {
     var voteAverage: String
     var overview: String
     var genre: [Int]
+    var id: Int
+    var backgroundImg: String
+    var posterImg: String
+    var actorTitle: String
 }

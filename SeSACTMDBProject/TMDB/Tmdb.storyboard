@@ -61,6 +61,7 @@
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4e-C4-US1">
                                                                             <rect key="frame" x="8" y="18" width="130" height="34"/>
                                                                             <constraints>
+                                                                                <constraint firstAttribute="height" constant="34" id="0lq-gg-B98"/>
                                                                                 <constraint firstAttribute="width" constant="130" id="HWh-NH-rwo"/>
                                                                             </constraints>
                                                                             <state key="normal" title="Button"/>
@@ -81,9 +82,12 @@
                                                                                 <action selector="forwardButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fdT-Qn-RXB"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="자세히보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSR-J0-1Hr">
-                                                                            <rect key="frame" x="8" y="18" width="130" height="41"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자세히보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSR-J0-1Hr">
+                                                                            <rect key="frame" x="8" y="18" width="130" height="34"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="34" id="Bb7-bS-xzO"/>
+                                                                                <constraint firstAttribute="width" constant="130" id="tx9-Np-Lh2"/>
+                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -92,8 +96,10 @@
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstItem="3hf-37-UKK" firstAttribute="top" secondItem="keY-r2-1Qy" secondAttribute="top" constant="8" id="AYx-Xq-el3"/>
+                                                                        <constraint firstItem="WSR-J0-1Hr" firstAttribute="leading" secondItem="g4e-C4-US1" secondAttribute="trailing" constant="-130" id="CDq-bi-Ead"/>
                                                                         <constraint firstAttribute="trailing" secondItem="3hf-37-UKK" secondAttribute="trailing" constant="8" id="Pwt-8V-mYn"/>
                                                                         <constraint firstAttribute="bottom" secondItem="g4e-C4-US1" secondAttribute="bottom" constant="8" id="UPL-uk-2fL"/>
+                                                                        <constraint firstItem="WSR-J0-1Hr" firstAttribute="top" secondItem="g4e-C4-US1" secondAttribute="bottom" constant="-34" id="dLF-km-DK0"/>
                                                                         <constraint firstAttribute="bottom" secondItem="3hf-37-UKK" secondAttribute="bottom" constant="8" id="dyr-5S-2BH"/>
                                                                         <constraint firstItem="g4e-C4-US1" firstAttribute="top" secondItem="keY-r2-1Qy" secondAttribute="top" constant="18" id="iei-OU-6Bp"/>
                                                                         <constraint firstItem="g4e-C4-US1" firstAttribute="leading" secondItem="keY-r2-1Qy" secondAttribute="leading" constant="8" id="kC4-6w-U5h"/>
@@ -131,7 +137,7 @@
                                                                         <constraint firstAttribute="bottom" secondItem="2vd-lG-9mL" secondAttribute="bottom" constant="3" id="nV3-E3-oEs"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eqn-bk-Ecp">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eqn-bk-Ecp">
                                                                     <rect key="frame" x="20" y="168" width="88" height="44"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMq-hu-bJB">
@@ -187,10 +193,12 @@
                                                                 <constraint firstItem="UEY-75-Q8w" firstAttribute="top" secondItem="hjb-UZ-oZ3" secondAttribute="top" id="KPm-8n-qmd"/>
                                                                 <constraint firstItem="dmu-e0-AQw" firstAttribute="top" secondItem="UEY-75-Q8w" secondAttribute="bottom" constant="10" id="Lp9-gT-5Uw"/>
                                                                 <constraint firstAttribute="trailing" secondItem="2cn-jm-pmT" secondAttribute="trailing" constant="8" id="Quv-df-9Wm"/>
+                                                                <constraint firstItem="Eqn-bk-Ecp" firstAttribute="leading" secondItem="hjb-UZ-oZ3" secondAttribute="leading" constant="20" symbolic="YES" id="TMK-2p-hkX"/>
                                                                 <constraint firstAttribute="trailing" secondItem="UEY-75-Q8w" secondAttribute="trailing" id="bSf-su-xxw"/>
                                                                 <constraint firstItem="vAh-Md-JYE" firstAttribute="leading" secondItem="hjb-UZ-oZ3" secondAttribute="leading" constant="7" id="dW4-wp-txg"/>
                                                                 <constraint firstAttribute="trailing" secondItem="dmu-e0-AQw" secondAttribute="trailing" id="n2x-94-wht"/>
                                                                 <constraint firstAttribute="trailing" secondItem="vAh-Md-JYE" secondAttribute="trailing" constant="7" id="nCA-5Q-Q49"/>
+                                                                <constraint firstItem="dmu-e0-AQw" firstAttribute="top" secondItem="Eqn-bk-Ecp" secondAttribute="bottom" constant="20" id="ndt-hx-978"/>
                                                                 <constraint firstItem="2cn-jm-pmT" firstAttribute="top" secondItem="hjb-UZ-oZ3" secondAttribute="top" constant="8" id="pJm-Zc-zAT"/>
                                                                 <constraint firstAttribute="trailing" secondItem="keY-r2-1Qy" secondAttribute="trailing" id="slu-ir-6mM"/>
                                                             </constraints>
@@ -270,6 +278,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="69.642857142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WWY-se-wIP">
+            <objects>
+                <viewController id="ESO-CG-ufl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L0S-3y-xZ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="02O-pI-EKR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VYO-wC-flg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864" y="70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MEY-uT-3Th">
