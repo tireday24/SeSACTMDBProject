@@ -24,14 +24,15 @@ class CastViewController: UIViewController {
     let castViewSection: [String] = ["Overview", "Cast"]
     
     var castId = 0
+    
     var castOverview = ""
-    var castImg = ""
-    var backgroundImg = ""
-    var posterImg = ""
+    
     var castTitle = ""
     var bgUrl = ""
     var posterUrl = ""
 
+    var a: TmdbInfo?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +76,7 @@ class CastViewController: UIViewController {
                 let json = JSON(value)
                 print("JSON: \(json)")
                 
-                for mv in json["results"] {
+                for mv in json["crew"] {
                     let movieOverview = mv.1["overview"].stringValue
                     let actorImage = mv.1["profil_path"].stringValue
                     let orignalName = mv.1["original_name"].stringValue
@@ -86,6 +87,7 @@ class CastViewController: UIViewController {
                     self.castList.append(info)
                 }
                 
+                print(self.castList.count, "fffffffffffff")
                 self.tableView.reloadData()
                 
             case .failure(let error):
@@ -124,6 +126,8 @@ extension CastViewController: UITableViewDelegate, UITableViewDataSource {
             
         } else if indexPath.section == 1 {
            let cell = tableView.dequeueReusableCell(withIdentifier: CastMemberTableViewCell.identifier) as! CastMemberTableViewCell
+            
+            print(castList.count, "================")
             
             let url = URL(string: "\(EndPoint.imgURL)\(castList[indexPath.row].actorImage)")
             cell.actorImageView.kf.setImage(with: url)

@@ -100,9 +100,10 @@ class TmdbViewController: UIViewController {
                 let bgImg = mv.1["backdrop_path"].stringValue
                 let posterImg = mv.1["poster_path"].stringValue
                 let acTitle = mv.1["title"].stringValue
+                let castView = mv.1["overview"].stringValue
                 
                 
-                let info = TmdbInfo(releaseDate: date, movieTitle: title, moviePoster: poster, voteAverage: "\(round(grade * 100) / 100.0)", overview: overview, genre: genre, id: id, backgroundImg: bgImg, posterImg: posterImg, actorTitle: acTitle)
+                let info = TmdbInfo(releaseDate: date, movieTitle: title, moviePoster: poster, voteAverage: "\(round(grade * 100) / 100.0)", overview: overview, genre: genre, id: id, backgroundImg: bgImg, posterImg: posterImg, actorTitle: acTitle, castOverview: castView)
                 
                 self.movieList.append(info)
             }
@@ -159,12 +160,16 @@ extension TmdbViewController:  UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Cast", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: CastViewController.identifier) as? CastViewController else {return}
+        
+        print(movieList[indexPath.item], "========")
+        
         vc.castId = movieList[indexPath.item].id
-        vc.castOverview = movieList[indexPath.item].overview
+        
+        vc.castOverview = movieList[indexPath.item].castOverview
+        
         vc.bgUrl = movieList[indexPath.item].backgroundImg
         vc.posterUrl = movieList[indexPath.item].posterImg
         vc.castTitle = movieList[indexPath.item].actorTitle
-        vc.castImg = movieList[indexPath.item].moviePoster
          let nv = UINavigationController(rootViewController: vc)
          nv.modalPresentationStyle = .fullScreen
          self.present(nv, animated: true)
