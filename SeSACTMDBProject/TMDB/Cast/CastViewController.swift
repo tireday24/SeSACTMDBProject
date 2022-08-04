@@ -78,9 +78,9 @@ class CastViewController: UIViewController {
                 
                 for mv in json["crew"] {
                     let movieOverview = mv.1["overview"].stringValue
-                    let actorImage = mv.1["profil_path"].stringValue
+                    let actorImage = mv.1["profile_path"].stringValue
                     let orignalName = mv.1["original_name"].stringValue
-                    let movieName = mv.1["name"].stringValue
+                    let movieName = mv.1["character"].stringValue
                     
                     let info = CastInfo(overview: movieOverview, actorImage: actorImage, realName: orignalName, mvName: movieName)
                     
@@ -134,6 +134,7 @@ extension CastViewController: UITableViewDelegate, UITableViewDataSource {
             cell.realNameLabel.text = castList[indexPath.row].realName
             cell.movieNameLabel.text = castList[indexPath.row].mvName
         }
+       
         
         return UITableViewCell()
     }

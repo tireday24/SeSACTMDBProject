@@ -18,5 +18,5 @@ struct TmdbInfo {
     var backgroundImg: String
     var posterImg: String
     var actorTitle: String
-    var castOverview: String
+    //var castOverview: String
 }

@@ -96,14 +96,17 @@ class TmdbViewController: UIViewController {
                 let genre = mv.1["genre_ids"].arrayObject as! [Int]
                 let date = mv.1["release_date"].stringValue
                 let title = mv.1["title"].stringValue
+                
+                
                 let id = mv.1["id"].intValue
                 let bgImg = mv.1["backdrop_path"].stringValue
                 let posterImg = mv.1["poster_path"].stringValue
                 let acTitle = mv.1["title"].stringValue
-                let castView = mv.1["overview"].stringValue
+                
+                //let castView = mv.1["overview"].stringValue
                 
                 
-                let info = TmdbInfo(releaseDate: date, movieTitle: title, moviePoster: poster, voteAverage: "\(round(grade * 100) / 100.0)", overview: overview, genre: genre, id: id, backgroundImg: bgImg, posterImg: posterImg, actorTitle: acTitle, castOverview: castView)
+                let info = TmdbInfo(releaseDate: date, movieTitle: title, moviePoster: poster, voteAverage: "\(round(grade * 100) / 100.0)", overview: overview, genre: genre, id: id, backgroundImg: bgImg, posterImg: posterImg, actorTitle: acTitle)
                 
                 self.movieList.append(info)
             }
@@ -151,7 +154,6 @@ extension TmdbViewController:  UICollectionViewDelegate, UICollectionViewDataSou
         cell.movieNameLabel.text = movieList[indexPath.item].movieTitle
         cell.overViewLabel.text = movieList[indexPath.item].overview
         
-        let data = movieList[indexPath.item]
         cell.configure()
         
         return cell
@@ -161,11 +163,9 @@ extension TmdbViewController:  UICollectionViewDelegate, UICollectionViewDataSou
         let sb = UIStoryboard(name: "Cast", bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: CastViewController.identifier) as? CastViewController else {return}
         
-        print(movieList[indexPath.item], "========")
-        
         vc.castId = movieList[indexPath.item].id
         
-        vc.castOverview = movieList[indexPath.item].castOverview
+        vc.castOverview = movieList[indexPath.item].overview
         
         vc.bgUrl = movieList[indexPath.item].backgroundImg
         vc.posterUrl = movieList[indexPath.item].posterImg
