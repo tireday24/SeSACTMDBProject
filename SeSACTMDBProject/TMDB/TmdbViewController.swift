@@ -113,6 +113,7 @@ class TmdbViewController: UIViewController {
                 self.movieList.append(info)
             }
             
+            
             self.collectionView.reloadData()
             
         case .failure(let error):
@@ -159,7 +160,13 @@ extension TmdbViewController:  UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TmdbCollectionViewCell.identifier, for: indexPath) as? TmdbCollectionViewCell else { return UICollectionViewCell()}
         
-        cell.releaseDataLabel.text = movieList[indexPath.item].releaseDate
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "yyyy-MM-dd"
+        let newDate = dateFormat.date(from: movieList[indexPath.item].releaseDate)
+        dateFormat.dateFormat = "MM/dd/yy"
+        let movieReleaseDate = dateFormat.string(from: newDate!)
+        
+        cell.releaseDataLabel.text = movieReleaseDate
         
         var genreArray: [String] = []
         

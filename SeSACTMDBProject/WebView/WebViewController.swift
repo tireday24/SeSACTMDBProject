@@ -39,6 +39,7 @@ class WebViewController: UIViewController {
     func openWebPage(key: String) {
         //유효한 URL인지 확인
         guard let url = URL(string: EndPoint.youtubeURL + "\(key)") else {
+            print(key, "dssdsdsdsdsd")
             print("Invaild URL")
             return
         }
