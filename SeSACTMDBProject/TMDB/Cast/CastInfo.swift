@@ -8,7 +8,6 @@
 import Foundation
 
 struct CastInfo {
-    var overview: String
     var actorImage: String
     var realName: String
     var mvName: String

@@ -31,7 +31,7 @@ class CastViewController: UIViewController {
     var bgUrl = ""
     var posterUrl = ""
 
-    var a: TmdbInfo?
+    //var a: TmdbInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,13 +77,12 @@ class CastViewController: UIViewController {
                 print("JSON: \(json)")
                 
                 for mv in json["crew"] {
-                    let movieOverview = mv.1["overview"].stringValue
                     let actorImage = mv.1["profile_path"].stringValue
                     let orignalName = mv.1["original_name"].stringValue
-                    let movieName = mv.1["character"].stringValue
+                    let movieName = mv.1["name"].stringValue
                     
-                    let info = CastInfo(overview: movieOverview, actorImage: actorImage, realName: orignalName, mvName: movieName)
-                    
+                    let info = CastInfo(actorImage: actorImage, realName: orignalName, mvName: movieName)
+                    print(info, "ssssssssss")
                     self.castList.append(info)
                 }
                 
@@ -123,6 +122,8 @@ extension CastViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
             cell.overviewLabel.text = castOverview
+            cell.overviewLabel.numberOfLines = 0
+            return cell
             
         } else if indexPath.section == 1 {
            let cell = tableView.dequeueReusableCell(withIdentifier: CastMemberTableViewCell.identifier) as! CastMemberTableViewCell
@@ -133,10 +134,12 @@ extension CastViewController: UITableViewDelegate, UITableViewDataSource {
             cell.actorImageView.kf.setImage(with: url)
             cell.realNameLabel.text = castList[indexPath.row].realName
             cell.movieNameLabel.text = castList[indexPath.row].mvName
+            return cell
+            
+        } else {
+            return UITableViewCell()
         }
        
-        
-        return UITableViewCell()
     }
     
     

@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol ToWebLink {
+    func webButtonClicked(num: Int)
+}
+
 class TmdbCollectionViewCell: UICollectionViewCell {
+    
     static let identifier = "TmdbCollectionViewCell"
 
     @IBOutlet weak var releaseDataLabel: UILabel!
@@ -42,6 +47,7 @@ class TmdbCollectionViewCell: UICollectionViewCell {
         clipBackgroundView.clipsToBounds = true
         gradeStackView.layer.borderWidth = 1
         
-        
     }
+    
+    
 }

@@ -15,7 +15,10 @@ class TmdbViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+
+    
     var movieList: [TmdbInfo] = []
+    var keyList: [Int : String] = [:]
     let genreSingleton = Genre.shared
     var startPage = 1
     var totalCount = 0
@@ -25,6 +28,7 @@ class TmdbViewController: UIViewController {
     var backgroundImg = ""
     var posterImg = ""
     var actorTitle = ""
+    var key = ""
     
 
     override func viewDidLoad() {
@@ -66,9 +70,6 @@ class TmdbViewController: UIViewController {
         
     }
     
-    func clipButtonClicked() {
-        //paperclip
-    }
     
     func forwardButtonClicked() {
         //chevron.forward
@@ -108,10 +109,29 @@ class TmdbViewController: UIViewController {
                 
                 let info = TmdbInfo(releaseDate: date, movieTitle: title, moviePoster: poster, voteAverage: "\(round(grade * 100) / 100.0)", overview: overview, genre: genre, id: id, backgroundImg: bgImg, posterImg: posterImg, actorTitle: acTitle)
                 
+                
                 self.movieList.append(info)
             }
             
             self.collectionView.reloadData()
+            
+        case .failure(let error):
+            print(error)
+        }
+    }
+}
+    
+    func videoAPI(id: Int, compltionHandler: @escaping (String) -> ()) {
+        let url = EndPoint.videoURL + "\(id)" + EndPoint.videoLink + APIKey.TMDB
+        
+    //접두어 -> AF 알라모파이어에서 url주소로 들어가고 get 방식 유효성 검사(상태코드) 실행 ex) 200 = 성공 response 데이터 가져오겠다
+    AF.request(url, method: .get).validate().responseData { response in
+        switch response.result {
+        case .success(let value):
+            let json = JSON(value)
+            print("JSON: \(json)")
+        
+            compltionHandler(json["results"][0]["key"].stringValue)
             
         case .failure(let error):
             print(error)
@@ -126,6 +146,8 @@ class TmdbViewController: UIViewController {
     
     @IBAction func forwardButtonClicked(_ sender: UIButton) {
     }
+    
+    
     
 }
 
@@ -156,6 +178,11 @@ extension TmdbViewController:  UICollectionViewDelegate, UICollectionViewDataSou
         
         cell.configure()
         
+        cell.clipButton
+        
+        cell.clipButton.tag = indexPath.item
+        cell.clipButton.addTarget(self, action: #selector(clipButtonClicked), for: .touchUpInside)
+        
         return cell
     }
     
@@ -164,18 +191,22 @@ extension TmdbViewController:  UICollectionViewDelegate, UICollectionViewDataSou
         guard let vc = sb.instantiateViewController(withIdentifier: CastViewController.identifier) as? CastViewController else {return}
         
         vc.castId = movieList[indexPath.item].id
-        
+
         vc.castOverview = movieList[indexPath.item].overview
         
         vc.bgUrl = movieList[indexPath.item].backgroundImg
         vc.posterUrl = movieList[indexPath.item].posterImg
         vc.castTitle = movieList[indexPath.item].actorTitle
+        
          let nv = UINavigationController(rootViewController: vc)
          nv.modalPresentationStyle = .fullScreen
          self.present(nv, animated: true)
+        
     }
     
+    
 }
+
 
 extension TmdbViewController: UICollectionViewDataSourcePrefetching {
 
@@ -193,4 +224,21 @@ extension TmdbViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
         
     }
+}
+
+extension TmdbViewController {
+
+    @objc func clipButtonClicked(sender: UIButton) {
+
+        videoAPI(id: movieList[sender.tag].id) { key in
+        let sb = UIStoryboard(name: "WebView", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: WebViewController.identifer) as? WebViewController else { return }
+        vc.videoKey = key
+        let nv = UINavigationController(rootViewController: vc)
+        nv.modalPresentationStyle = .fullScreen
+        self.present(nv, animated: true)
+
+    }
+
+}
 }

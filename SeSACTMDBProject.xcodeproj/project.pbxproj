@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		813B797E289CECF300AC6BAD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B797D289CECF300AC6BAD /* WebViewController.swift */; };
+		813B7980289CED0900AC6BAD /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813B797F289CED0900AC6BAD /* WebView.storyboard */; };
 		8199870A289B936E00B01C42 /* CastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998709289B936E00B01C42 /* CastViewController.swift */; };
 		8199870C289B996000B01C42 /* Cast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8199870B289B996000B01C42 /* Cast.storyboard */; };
 		8199870E289B9B4F00B01C42 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199870D289B9B4F00B01C42 /* CastTableViewCell.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		813B797D289CECF300AC6BAD /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		813B797F289CED0900AC6BAD /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		81998709289B936E00B01C42 /* CastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewController.swift; sourceTree = "<group>"; };
 		8199870B289B996000B01C42 /* Cast.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cast.storyboard; sourceTree = "<group>"; };
 		8199870D289B9B4F00B01C42 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
@@ -81,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		813B797C289CECCA00AC6BAD /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				813B797D289CECF300AC6BAD /* WebViewController.swift */,
+				813B797F289CED0900AC6BAD /* WebView.storyboard */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		81998706289B933B00B01C42 /* Cast */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +142,7 @@
 		81BEFF9C2899F6B600CE5B79 /* SeSACTMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				813B797C289CECCA00AC6BAD /* WebView */,
 				81999E30289A3FA000A1C4EB /* TMDB */,
 				81BEFFBA2899FA8900CE5B79 /* Key */,
 				81BEFFB92899FA1400CE5B79 /* Resource */,
@@ -238,6 +252,7 @@
 				8199870C289B996000B01C42 /* Cast.storyboard in Resources */,
 				81998719289BAEAF00B01C42 /* OverviewTableViewCell.xib in Resources */,
 				81999E36289A3FDF00A1C4EB /* Tmdb.storyboard in Resources */,
+				813B7980289CED0900AC6BAD /* WebView.storyboard in Resources */,
 				81BEFFA52899F6B600CE5B79 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +276,7 @@
 				8199870E289B9B4F00B01C42 /* CastTableViewCell.swift in Sources */,
 				81999E45289A8F4800A1C4EB /* Singleton.swift in Sources */,
 				81999E41289A579800A1C4EB /* TmdbInfo.swift in Sources */,
+				813B797E289CECF300AC6BAD /* WebViewController.swift in Sources */,
 				81BEFFB82899F9BB00CE5B79 /* Constant.swift in Sources */,
 				81BEFFBE2899FABC00CE5B79 /* Example2.swift in Sources */,
 				8199871C289BAF9C00B01C42 /* CastMemberTableViewCell.swift in Sources */,
