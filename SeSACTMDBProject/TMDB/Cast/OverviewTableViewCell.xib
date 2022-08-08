@@ -19,23 +19,32 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEB-2L-2MA">
                         <rect key="frame" x="0.0" y="0.0" width="378" height="172"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="378" id="Wti-kd-LRr"/>
-                            <constraint firstAttribute="height" constant="172" id="y0f-Ab-06U"/>
+                            <constraint firstAttribute="width" constant="378" id="2OW-xX-7Md"/>
+                            <constraint firstAttribute="height" constant="172" id="8fw-Ru-sW8"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpk-gx-rO1">
+                        <rect key="frame" x="156" y="141" width="67" height="14"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="qEB-2L-2MA" secondAttribute="bottom" id="BVb-bl-s2w"/>
-                    <constraint firstAttribute="trailing" secondItem="qEB-2L-2MA" secondAttribute="trailing" id="N3M-52-bS8"/>
-                    <constraint firstItem="qEB-2L-2MA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Qav-z8-7JD"/>
-                    <constraint firstItem="qEB-2L-2MA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cB4-WJ-2jT"/>
+                    <constraint firstAttribute="trailing" secondItem="qEB-2L-2MA" secondAttribute="trailing" id="4JH-R4-g5U"/>
+                    <constraint firstItem="bpk-gx-rO1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="156" id="K8U-gI-ioy"/>
+                    <constraint firstItem="bpk-gx-rO1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="141" id="Ztd-K0-Koc"/>
+                    <constraint firstItem="qEB-2L-2MA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="c4t-Px-K2A"/>
+                    <constraint firstAttribute="bottom" secondItem="qEB-2L-2MA" secondAttribute="bottom" id="cG9-qZ-5Nr"/>
+                    <constraint firstAttribute="trailing" secondItem="bpk-gx-rO1" secondAttribute="trailing" constant="155" id="haN-37-Nhf"/>
+                    <constraint firstItem="qEB-2L-2MA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yJq-pY-622"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="expandButton" destination="bpk-gx-rO1" id="ynf-kD-dlx"/>
                 <outlet property="overviewLabel" destination="qEB-2L-2MA" id="OYL-le-5dT"/>
             </connections>
             <point key="canvasLocation" x="173.91304347826087" y="92.410714285714278"/>

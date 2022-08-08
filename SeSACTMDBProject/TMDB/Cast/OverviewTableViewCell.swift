@@ -13,6 +13,10 @@ class OverviewTableViewCell: UITableViewCell {
 
 
     @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var expandButton: UIButton!
     
+    override func awakeFromNib() {
+        expandButton.tintColor = .black
+    }
     
 }

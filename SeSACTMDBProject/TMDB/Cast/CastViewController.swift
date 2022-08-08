@@ -22,9 +22,10 @@ class CastViewController: UIViewController {
     var castList: [CastInfo] = []
     static let identifier = "CastViewController"
     let castViewSection: [String] = ["Overview", "Cast"]
+    var isExpanded = false
     
     var castId = 0
-    
+    var height: CGFloat = 100
     var castOverview = ""
     
     var castTitle = ""
@@ -49,6 +50,7 @@ class CastViewController: UIViewController {
         backgroundImage.kf.setImage(with: backgroundUrl)
         let psUrl = URL(string: "\(EndPoint.imgURL)\(posterUrl)")
         moviePoster.kf.setImage(with: psUrl)
+        tableView.rowHeight = UITableView.automaticDimension
        
         
     }
@@ -122,6 +124,7 @@ extension CastViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
             cell.overviewLabel.text = castOverview
+            cell.expandButton.setImage(UIImage(systemName: isExpanded ? "chevron.down" : "chevron.up"), for: .normal)
             cell.overviewLabel.numberOfLines = 0
             return cell
             
@@ -140,6 +143,22 @@ extension CastViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            isExpanded = !isExpanded
+            height = isExpanded ? 120: UITableView.automaticDimension
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return height
+        } else {
+            return 80
+        }
     }
     
     
