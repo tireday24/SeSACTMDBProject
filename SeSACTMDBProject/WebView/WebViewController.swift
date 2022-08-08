@@ -38,14 +38,11 @@ class WebViewController: UIViewController {
 
     func openWebPage(key: String) {
         //유효한 URL인지 확인
-        guard let url = URL(string: EndPoint.youtubeURL + "\(key)") else {
-            print(key, "dssdsdsdsdsd")
-            print("Invaild URL")
-            return
-        }
+        guard let url = URL(string: EndPoint.youtubeURL + "\(key)") else { return }
+        print(key, "ffffffffffffffffff")
         let request = URLRequest(url: url)
         webView.load(request)
-        //skeletonView library
+        
     }
     
     

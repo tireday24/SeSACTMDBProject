@@ -122,18 +122,21 @@ class TmdbViewController: UIViewController {
     }
 }
     
+    
     func videoAPI(id: Int, compltionHandler: @escaping (String) -> ()) {
-        let url = EndPoint.videoURL + "\(id)" + EndPoint.videoLink + APIKey.TMDB
-        
+        let url = "\(EndPoint.videoURL)/\(id)/\(EndPoint.videoLink)\(APIKey.TMDB)"
+
     //접두어 -> AF 알라모파이어에서 url주소로 들어가고 get 방식 유효성 검사(상태코드) 실행 ex) 200 = 성공 response 데이터 가져오겠다
     AF.request(url, method: .get).validate().responseData { response in
         switch response.result {
         case .success(let value):
             let json = JSON(value)
             print("JSON: \(json)")
-        
+
             compltionHandler(json["results"][0]["key"].stringValue)
-            
+
+
+
         case .failure(let error):
             print(error)
         }
@@ -184,8 +187,6 @@ extension TmdbViewController:  UICollectionViewDelegate, UICollectionViewDataSou
         cell.overViewLabel.text = movieList[indexPath.item].overview
         
         cell.configure()
-        
-        cell.clipButton
         
         cell.clipButton.tag = indexPath.item
         cell.clipButton.addTarget(self, action: #selector(clipButtonClicked), for: .touchUpInside)
@@ -238,12 +239,13 @@ extension TmdbViewController {
     @objc func clipButtonClicked(sender: UIButton) {
 
         videoAPI(id: movieList[sender.tag].id) { key in
-        let sb = UIStoryboard(name: "WebView", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: WebViewController.identifer) as? WebViewController else { return }
-        vc.videoKey = key
-        let nv = UINavigationController(rootViewController: vc)
-        nv.modalPresentationStyle = .fullScreen
-        self.present(nv, animated: true)
+            print(key, "sdsdadsad")
+            let sb = UIStoryboard(name: "WebView", bundle: nil)
+            guard let vc = sb.instantiateViewController(withIdentifier: WebViewController.identifer) as? WebViewController else { return }
+            vc.videoKey = key
+            let nv = UINavigationController(rootViewController: vc)
+            nv.modalPresentationStyle = .fullScreen
+            self.present(nv, animated: true)
 
     }
 
