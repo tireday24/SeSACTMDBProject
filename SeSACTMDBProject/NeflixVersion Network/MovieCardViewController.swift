@@ -13,18 +13,18 @@ class MovieCardViewController: UIViewController {
 
     let colorList: [UIColor] = [.red, .systemPink, .lightGray, .yellow, .black, .systemRed, .green, .systemBlue, .brown, .orange]
     
-    let numberList: [[Int]] = [
-        [Int](1...10),
-        [Int](11...20),
-        [Int](21...30),
-        [Int](31...40),
-        [Int](41...50),
-        [Int](51...60),
-        [Int](61...70),
-        [Int](71...80),
-        [Int](81...90),
-        [Int](91...100)
-    ]
+//    let numberList: [[Int]] = [
+//        [Int](1...10),
+//        [Int](11...20),
+//        [Int](21...30),
+//        [Int](31...40),
+//        [Int](41...50),
+//        [Int](51...60),
+//        [Int](61...70),
+//        [Int](71...80),
+//        [Int](81...90),
+//        [Int](91...100)
+//    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ class MovieCardViewController: UIViewController {
 extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return numberList.count
+        return colorList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,7 +75,7 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
 extension MovieCardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberList[collectionView.tag].count
+        return colorList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,8 +83,7 @@ extension MovieCardViewController: UICollectionViewDelegate, UICollectionViewDat
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCardCollectionViewCell.identifier, for: indexPath) as? MovieCardCollectionViewCell else { return UICollectionViewCell()}
 
         cell.movieCardView.posterImageView.backgroundColor = colorList[indexPath.item]
-        cell.movieCardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
-        cell.movieCardView.contentLabel.textColor = .white
+        //cell.movieCardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
         
         return cell
     }

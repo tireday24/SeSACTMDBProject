@@ -10,7 +10,7 @@ import UIKit
 class MovieCardView: UIView {
     
     @IBOutlet weak var posterImageView: UIImageView!
-    @IBOutlet weak var contentLabel: UILabel!
+
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
