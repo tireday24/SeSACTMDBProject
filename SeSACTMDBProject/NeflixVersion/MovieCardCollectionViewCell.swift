@@ -22,7 +22,6 @@ class MovieCardCollectionViewCell: UICollectionViewCell {
     func setupUI() {
         movieCardView.backgroundColor = .clear
         movieCardView.posterImageView.backgroundColor = .lightGray
-        movieCardView.posterImageView.layer.cornerRadius = 10
     }
     
 

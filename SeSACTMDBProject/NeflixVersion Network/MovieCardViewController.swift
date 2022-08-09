@@ -11,6 +11,7 @@ class MovieCardViewController: UIViewController {
     
     @IBOutlet weak var mainTableView: UITableView!
 
+    let colorList: [UIColor] = [.red, .systemPink, .lightGray, .yellow, .black, .systemRed, .green, .systemBlue, .brown, .orange]
     
     let numberList: [[Int]] = [
         [Int](1...10),
@@ -81,7 +82,7 @@ extension MovieCardViewController: UICollectionViewDelegate, UICollectionViewDat
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCardCollectionViewCell.identifier, for: indexPath) as? MovieCardCollectionViewCell else { return UICollectionViewCell()}
 
-        cell.movieCardView.posterImageView.backgroundColor = .black
+        cell.movieCardView.posterImageView.backgroundColor = colorList[indexPath.item]
         cell.movieCardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
         cell.movieCardView.contentLabel.textColor = .white
         
