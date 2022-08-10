@@ -7,9 +7,13 @@
 
 import UIKit
 
+import Kingfisher
+
 class MovieCardViewController: UIViewController {
     
     @IBOutlet weak var mainTableView: UITableView!
+    
+    var recommendList: [[String]] = []
 
     let colorList: [UIColor] = [.red, .systemPink, .lightGray, .yellow, .black, .systemRed, .green, .systemBlue, .brown, .orange]
     
@@ -32,6 +36,11 @@ class MovieCardViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
+        TMDBAPIManager.shared.requestImage { recommend in
+            self.recommendList = recommend
+            self.mainTableView.reloadData()
+        }
+        
 
     }
     
@@ -43,7 +52,7 @@ class MovieCardViewController: UIViewController {
 extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return colorList.count
+        return recommendList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,6 +69,7 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
         cell.movieCollectionView.register(UINib(nibName: MovieCardCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCardCollectionViewCell.identifier)
         cell.movieCollectionView.tag = indexPath.section
         cell.movieCollectionView.reloadData()
+        cell.titleLabel.text = "\(TMDBAPIManager.shared.movieList[indexPath.section].0) recommend today!"
         
         return cell
     }
@@ -75,7 +85,8 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
 extension MovieCardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colorList.count
+        return recommendList[collectionView.tag].count
+        //return numberList[collectionView.tag].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,7 +94,10 @@ extension MovieCardViewController: UICollectionViewDelegate, UICollectionViewDat
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCardCollectionViewCell.identifier, for: indexPath) as? MovieCardCollectionViewCell else { return UICollectionViewCell()}
 
         cell.movieCardView.posterImageView.backgroundColor = colorList[indexPath.item]
-        //cell.movieCardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
+        let url = URL(string: "\(TMDBAPIManager.shared.imageURL)\(recommendList[collectionView.tag][indexPath.item])")
+        cell.movieCardView.posterImageView.kf.setImage(with: url)
+        
+        
         
         return cell
     }

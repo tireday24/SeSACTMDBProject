@@ -19,6 +19,12 @@ class MovieCardCollectionViewCell: UICollectionViewCell {
         setupUI()
     }
     
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//
+//        movieCardView.contentLabel.text = "Being Ready"
+//    }
+    
     func setupUI() {
         movieCardView.backgroundColor = .clear
         movieCardView.posterImageView.backgroundColor = .lightGray
