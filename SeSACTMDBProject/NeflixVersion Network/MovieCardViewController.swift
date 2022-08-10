@@ -72,7 +72,7 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
+        return 240
     }
     
 }
@@ -89,6 +89,7 @@ extension MovieCardViewController: UICollectionViewDelegate, UICollectionViewDat
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCardCollectionViewCell.identifier, for: indexPath) as? MovieCardCollectionViewCell else { return UICollectionViewCell()}
 
         cell.movieCardView.posterImageView.backgroundColor = .black
+        cell.movieCardView.posterImageView.contentMode = .scaleToFill
         let url = URL(string: "\(TMDBAPIManager.shared.imageURL)\(recommendList[collectionView.tag][indexPath.item])")
         cell.movieCardView.posterImageView.kf.setImage(with: url)
         

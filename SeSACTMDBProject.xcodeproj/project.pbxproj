@@ -27,6 +27,7 @@
 		81999E3F289A53ED00A1C4EB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 81999E3E289A53ED00A1C4EB /* Kingfisher */; };
 		81999E41289A579800A1C4EB /* TmdbInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81999E40289A579800A1C4EB /* TmdbInfo.swift */; };
 		81999E45289A8F4800A1C4EB /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81999E44289A8F4800A1C4EB /* Singleton.swift */; };
+		81AD583228A3890A0096AC54 /* MovieListToJason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD583128A3890A0096AC54 /* MovieListToJason.swift */; };
 		81B5FEB428A22E1F00E4AE48 /* MovieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FEB328A22E1F00E4AE48 /* MovieCardView.swift */; };
 		81B5FEB628A22F6A00E4AE48 /* MovieCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B5FEB528A22F6A00E4AE48 /* MovieCard.storyboard */; };
 		81B5FEB928A2310A00E4AE48 /* MovieCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B5FEB728A2310A00E4AE48 /* MovieCardCollectionViewCell.swift */; };
@@ -63,6 +64,7 @@
 		81999E35289A3FDF00A1C4EB /* Tmdb.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tmdb.storyboard; sourceTree = "<group>"; };
 		81999E40289A579800A1C4EB /* TmdbInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbInfo.swift; sourceTree = "<group>"; };
 		81999E44289A8F4800A1C4EB /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		81AD583128A3890A0096AC54 /* MovieListToJason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListToJason.swift; sourceTree = "<group>"; };
 		81B5FEB328A22E1F00E4AE48 /* MovieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardView.swift; sourceTree = "<group>"; };
 		81B5FEB528A22F6A00E4AE48 /* MovieCard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieCard.storyboard; sourceTree = "<group>"; };
 		81B5FEB728A2310A00E4AE48 /* MovieCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCardCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				81BEFFBA2899FA8900CE5B79 /* Key */,
 				81BEFFB92899FA1400CE5B79 /* Resource */,
 				81BEFFB72899F9BB00CE5B79 /* Constant.swift */,
+				81AD583128A3890A0096AC54 /* MovieListToJason.swift */,
 				81BEFF9D2899F6B600CE5B79 /* AppDelegate.swift */,
 				81BEFF9F2899F6B600CE5B79 /* SceneDelegate.swift */,
 				81BEFFA12899F6B600CE5B79 /* ViewController.swift */,
@@ -313,6 +316,7 @@
 				81998718289BAEAF00B01C42 /* OverviewTableViewCell.swift in Sources */,
 				81BEFFB42899F82400CE5B79 /* SearchViewController.swift in Sources */,
 				81BEFFA02899F6B600CE5B79 /* SceneDelegate.swift in Sources */,
+				81AD583228A3890A0096AC54 /* MovieListToJason.swift in Sources */,
 				8199870A289B936E00B01C42 /* CastViewController.swift in Sources */,
 				81BEFFB62899F88E00CE5B79 /* APIKey.swift in Sources */,
 				8199870E289B9B4F00B01C42 /* CastTableViewCell.swift in Sources */,
