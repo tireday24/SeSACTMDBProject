@@ -43,9 +43,6 @@ class MovieCardViewController: UIViewController {
         
 
     }
-    
-
-  
 
 }
 
@@ -69,7 +66,7 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
         cell.movieCollectionView.register(UINib(nibName: MovieCardCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCardCollectionViewCell.identifier)
         cell.movieCollectionView.tag = indexPath.section
         cell.movieCollectionView.reloadData()
-        cell.titleLabel.text = "\(TMDBAPIManager.shared.movieList[indexPath.section].0) recommend today!"
+        cell.titleLabel.text = "\(TMDBAPIManager.shared.movieList[indexPath.section].0) Similar Contents!"
         
         return cell
     }
@@ -77,8 +74,6 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 190
     }
-    
-    
     
 }
 
@@ -93,11 +88,9 @@ extension MovieCardViewController: UICollectionViewDelegate, UICollectionViewDat
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCardCollectionViewCell.identifier, for: indexPath) as? MovieCardCollectionViewCell else { return UICollectionViewCell()}
 
-        cell.movieCardView.posterImageView.backgroundColor = colorList[indexPath.item]
+        cell.movieCardView.posterImageView.backgroundColor = .black
         let url = URL(string: "\(TMDBAPIManager.shared.imageURL)\(recommendList[collectionView.tag][indexPath.item])")
         cell.movieCardView.posterImageView.kf.setImage(with: url)
-        
-        
         
         return cell
     }
