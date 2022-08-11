@@ -60,21 +60,31 @@ class TheaterMapViewController: UIViewController {
         map.addAnnotations(theaterInfo)
         
     }
+    
+    func actionSheetAlert(_ action: UIAlertAction) {
+        map.removeAnnotations(map.annotations)
+        for actionSheet in theaterList.mapAnnotations {
+            if action.title == actionSheet.type {
+                setRegionAndAnnotation(center: CLLocationCoordinate2D(latitude: actionSheet.latitude, longitude: actionSheet.longitude), title: actionSheet.location)
+            }
+        }
+    }
    
     
     func showAlertController() {
         let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         
-        let mega = UIAlertAction(title: "메가박스", style: .default) { _ in
-            //
+        let mega = UIAlertAction(title: "메가박스", style: .default) { mega in
+            self.actionSheetAlert(mega)
         }
-        let lotte = UIAlertAction(title: "롯데시네마", style: .default) { _ in
-            //
+        let lotte = UIAlertAction(title: "롯데시네마", style: .default) { lotte in
+            self.actionSheetAlert(lotte)
         }
-        let cgv = UIAlertAction(title: "CGV", style: .default) { _ in
-            //
+        let cgv = UIAlertAction(title: "CGV", style: .default) { cgv in
+            self.actionSheetAlert(cgv)
         }
         let total = UIAlertAction(title: "전체보기", style: .default) { _ in
+            self.map.removeAnnotations(self.map.annotations)
             for location in self.theaterList.mapAnnotations {
                 self.setRegionAndAnnotation(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), title: location.location)
             }
@@ -109,6 +119,8 @@ extension TheaterMapViewController {
             print("위치서비스가 꺼져 있어서 위치 권한 요청을 못 합니다")
         }
     }
+    
+    
     
     func checkUserCurrentLocationAuthorization(_ authorizationStatus: CLAuthorizationStatus) {
         let center = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
