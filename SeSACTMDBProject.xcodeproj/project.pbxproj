@@ -10,6 +10,10 @@
 		810B29D728A22B7D00E6FFE8 /* MovieCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 810B29D628A22B7D00E6FFE8 /* MovieCardView.xib */; };
 		813B797E289CECF300AC6BAD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B797D289CECF300AC6BAD /* WebViewController.swift */; };
 		813B7980289CED0900AC6BAD /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813B797F289CED0900AC6BAD /* WebView.storyboard */; };
+		8199472828A4CD95001729B9 /* TheaterMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8199472728A4CD95001729B9 /* TheaterMap.storyboard */; };
+		8199472A28A4CDA5001729B9 /* TheaterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199472928A4CDA5001729B9 /* TheaterMapViewController.swift */; };
+		8199472C28A4CF4A001729B9 /* MapStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199472B28A4CF4A001729B9 /* MapStruct.swift */; };
+		8199472E28A51FD3001729B9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199472D28A51FD3001729B9 /* MapViewController.swift */; };
 		8199870A289B936E00B01C42 /* CastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81998709289B936E00B01C42 /* CastViewController.swift */; };
 		8199870C289B996000B01C42 /* Cast.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8199870B289B996000B01C42 /* Cast.storyboard */; };
 		8199870E289B9B4F00B01C42 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199870D289B9B4F00B01C42 /* CastTableViewCell.swift */; };
@@ -51,6 +55,10 @@
 		810B29D628A22B7D00E6FFE8 /* MovieCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCardView.xib; sourceTree = "<group>"; };
 		813B797D289CECF300AC6BAD /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		813B797F289CED0900AC6BAD /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		8199472728A4CD95001729B9 /* TheaterMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TheaterMap.storyboard; sourceTree = "<group>"; };
+		8199472928A4CDA5001729B9 /* TheaterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterMapViewController.swift; sourceTree = "<group>"; };
+		8199472B28A4CF4A001729B9 /* MapStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStruct.swift; sourceTree = "<group>"; };
+		8199472D28A51FD3001729B9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		81998709289B936E00B01C42 /* CastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewController.swift; sourceTree = "<group>"; };
 		8199870B289B996000B01C42 /* Cast.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cast.storyboard; sourceTree = "<group>"; };
 		8199870D289B9B4F00B01C42 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,6 +130,17 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		8199472628A4CD6B001729B9 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8199472928A4CDA5001729B9 /* TheaterMapViewController.swift */,
+				8199472728A4CD95001729B9 /* TheaterMap.storyboard */,
+				8199472B28A4CF4A001729B9 /* MapStruct.swift */,
+				8199472D28A51FD3001729B9 /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		81998706289B933B00B01C42 /* Cast */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +198,7 @@
 		81BEFF9C2899F6B600CE5B79 /* SeSACTMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				8199472628A4CD6B001729B9 /* Map */,
 				81B5FEBD28A2355C00E4AE48 /* NeflixVersion Network */,
 				810B29D528A22AC800E6FFE8 /* NeflixVersion */,
 				813B797C289CECCA00AC6BAD /* WebView */,
@@ -290,6 +310,7 @@
 				8199871D289BAF9C00B01C42 /* CastMemberTableViewCell.xib in Resources */,
 				81B5FEB628A22F6A00E4AE48 /* MovieCard.storyboard in Resources */,
 				81BEFFA72899F6B600CE5B79 /* Assets.xcassets in Resources */,
+				8199472828A4CD95001729B9 /* TheaterMap.storyboard in Resources */,
 				81B5FEBA28A2310A00E4AE48 /* MovieCardCollectionViewCell.xib in Resources */,
 				8199870C289B996000B01C42 /* Cast.storyboard in Resources */,
 				81998719289BAEAF00B01C42 /* OverviewTableViewCell.xib in Resources */,
@@ -312,8 +333,10 @@
 				81999E34289A3FD700A1C4EB /* TmdbViewController.swift in Sources */,
 				81BEFF9E2899F6B600CE5B79 /* AppDelegate.swift in Sources */,
 				81B5FEB928A2310A00E4AE48 /* MovieCardCollectionViewCell.swift in Sources */,
+				8199472C28A4CF4A001729B9 /* MapStruct.swift in Sources */,
 				81B5FEBF28A2359400E4AE48 /* MovieCardViewController.swift in Sources */,
 				81998718289BAEAF00B01C42 /* OverviewTableViewCell.swift in Sources */,
+				8199472E28A51FD3001729B9 /* MapViewController.swift in Sources */,
 				81BEFFB42899F82400CE5B79 /* SearchViewController.swift in Sources */,
 				81BEFFA02899F6B600CE5B79 /* SceneDelegate.swift in Sources */,
 				81AD583228A3890A0096AC54 /* MovieListToJason.swift in Sources */,
@@ -322,6 +345,7 @@
 				8199870E289B9B4F00B01C42 /* CastTableViewCell.swift in Sources */,
 				81999E45289A8F4800A1C4EB /* Singleton.swift in Sources */,
 				81999E41289A579800A1C4EB /* TmdbInfo.swift in Sources */,
+				8199472A28A4CDA5001729B9 /* TheaterMapViewController.swift in Sources */,
 				813B797E289CECF300AC6BAD /* WebViewController.swift in Sources */,
 				81B5FEB428A22E1F00E4AE48 /* MovieCardView.swift in Sources */,
 				81BEFFB82899F9BB00CE5B79 /* Constant.swift in Sources */,
@@ -478,6 +502,7 @@
 				DEVELOPMENT_TEAM = D6A93QYKAF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACTMDBProject/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치 기반으로 주변의 영화관 위치를 보여주기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -488,7 +513,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.SeSACTMDBProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.SeSACTMDB2Project;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -506,6 +531,7 @@
 				DEVELOPMENT_TEAM = D6A93QYKAF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACTMDBProject/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치 기반으로 주변의 영화관 위치를 보여주기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -516,7 +542,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.SeSACTMDBProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.SeSACTMDB2Project;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

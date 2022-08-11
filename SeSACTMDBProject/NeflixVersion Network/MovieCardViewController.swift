@@ -15,7 +15,7 @@ class MovieCardViewController: UIViewController {
     
     var recommendList: [[String]] = []
 
-    let colorList: [UIColor] = [.red, .systemPink, .lightGray, .yellow, .black, .systemRed, .green, .systemBlue, .brown, .orange]
+    //let colorList: [UIColor] = [.red, .systemPink, .lightGray, .yellow, .black, .systemRed, .green, .systemBlue, .brown, .orange]
     
 //    let numberList: [[Int]] = [
 //        [Int](1...10),

@@ -63,7 +63,11 @@ class TmdbViewController: UIViewController {
     }
     
     @objc func listbuttonClicked() {
-        
+        let sb = UIStoryboard(name: "TheaterMap", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: TheaterMapViewController.identifier) as? TheaterMapViewController else {return}
+        let nv = UINavigationController(rootViewController: vc)
+        nv.modalPresentationStyle = .fullScreen
+        self.present(nv, animated: true)
     }
     
     @objc func rightButtonClicked() {
