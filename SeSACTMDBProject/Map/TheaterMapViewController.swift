@@ -16,6 +16,7 @@ class TheaterMapViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     let theaterList = TheaterList()
+    let center: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude:  37.4824761978647, longitude: 126.9521680487202)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +26,16 @@ class TheaterMapViewController: UIViewController {
         navi.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterButtonClicked))
         
         locationManager.delegate = self
+        
+        
+        setRegionAndAnnotationSecond(center: center, theater: theaterList.mapAnnotations)
+        
     
     }
     
     @objc func goBackButtonClicked() {
-        dismiss(animated: true)
-    }
+       dismiss(animated: true)
+   }
     
     @objc func filterButtonClicked() {
         showAlertController()
@@ -38,7 +43,7 @@ class TheaterMapViewController: UIViewController {
 
     
     func setRegionAndAnnotation(center: CLLocationCoordinate2D, title: String) {
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 3000, longitudinalMeters: 3000)
         map.setRegion(region, animated: true)
         
         let annotation = MKPointAnnotation()
@@ -60,6 +65,25 @@ class TheaterMapViewController: UIViewController {
         map.addAnnotations(theaterInfo)
         
     }
+    
+    func setRegionAndAnnotationSecond(center: CLLocationCoordinate2D, theater: [Theater]) {
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 3000, longitudinalMeters: 3000)
+        map.setRegion(region, animated: true)
+        
+        var theaterInfo:[MKPointAnnotation] = []
+
+        for i in theater {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: i.latitude, longitude: i.longitude)
+            annotation.title = "\(i.location)"
+            theaterInfo.append(annotation)
+        }
+        
+        map.addAnnotations(theaterInfo)
+        
+    }
+    
+    
     
     func actionSheetAlert(_ action: UIAlertAction) {
         map.removeAnnotations(map.annotations)
