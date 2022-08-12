@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		810B29D728A22B7D00E6FFE8 /* MovieCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 810B29D628A22B7D00E6FFE8 /* MovieCardView.xib */; };
+		812EC5C228A679AD0064A3DB /* SearchNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812EC5C128A679AD0064A3DB /* SearchNameViewController.swift */; };
 		813B797E289CECF300AC6BAD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B797D289CECF300AC6BAD /* WebViewController.swift */; };
 		813B7980289CED0900AC6BAD /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813B797F289CED0900AC6BAD /* WebView.storyboard */; };
 		8199472828A4CD95001729B9 /* TheaterMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8199472728A4CD95001729B9 /* TheaterMap.storyboard */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		810B29D628A22B7D00E6FFE8 /* MovieCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCardView.xib; sourceTree = "<group>"; };
+		812EC5C128A679AD0064A3DB /* SearchNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNameViewController.swift; sourceTree = "<group>"; };
 		813B797D289CECF300AC6BAD /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		813B797F289CED0900AC6BAD /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		8199472728A4CD95001729B9 /* TheaterMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TheaterMap.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,14 @@
 				810B29D628A22B7D00E6FFE8 /* MovieCardView.xib */,
 			);
 			path = NeflixVersion;
+			sourceTree = "<group>";
+		};
+		812EC5AF28A66A930064A3DB /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				812EC5C128A679AD0064A3DB /* SearchNameViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		813B797C289CECCA00AC6BAD /* WebView */ = {
@@ -198,6 +208,7 @@
 		81BEFF9C2899F6B600CE5B79 /* SeSACTMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				812EC5AF28A66A930064A3DB /* Search */,
 				8199472628A4CD6B001729B9 /* Map */,
 				81B5FEBD28A2355C00E4AE48 /* NeflixVersion Network */,
 				810B29D528A22AC800E6FFE8 /* NeflixVersion */,
@@ -329,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81998710289BA27100B01C42 /* CastInfo.swift in Sources */,
+				812EC5C228A679AD0064A3DB /* SearchNameViewController.swift in Sources */,
 				81BEFFA22899F6B600CE5B79 /* ViewController.swift in Sources */,
 				81999E34289A3FD700A1C4EB /* TmdbViewController.swift in Sources */,
 				81BEFF9E2899F6B600CE5B79 /* AppDelegate.swift in Sources */,
@@ -502,7 +514,7 @@
 				DEVELOPMENT_TEAM = D6A93QYKAF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACTMDBProject/Info.plist;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치 기반으로 주변의 영화관 위치를 보여주기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치 가반으로 주변의 영화관 위치를 보여주기 위해서 권한이 필요합니다";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -513,7 +525,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.SeSACTMDB2Project;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.SeSACTMDBProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -531,7 +543,7 @@
 				DEVELOPMENT_TEAM = D6A93QYKAF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACTMDBProject/Info.plist;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치 기반으로 주변의 영화관 위치를 보여주기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치 가반으로 주변의 영화관 위치를 보여주기 위해서 권한이 필요합니다";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -542,7 +554,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.SeSACTMDB2Project;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daniel.SeSACTMDBProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

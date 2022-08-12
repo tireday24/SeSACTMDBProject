@@ -27,11 +27,8 @@ class TheaterMapViewController: UIViewController {
         navi.rightBarButtonItem = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterButtonClicked))
         
         locationManager.delegate = self
-        
-        
-        setRegionAndAnnotationSecond(center: center, theater: theaterList.mapAnnotations)
-        
     
+        setRegionAndAnnotationSecond(center: center, theater: theaterList.mapAnnotations)
     }
     
     @objc func goBackButtonClicked() {
@@ -68,7 +65,7 @@ class TheaterMapViewController: UIViewController {
     }
     
     func setRegionAndAnnotationSecond(center: CLLocationCoordinate2D, theater: [Theater]) {
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 3000, longitudinalMeters: 3000)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 10000, longitudinalMeters: 10000)
         map.setRegion(region, animated: true)
         
         var theaterInfo:[MKPointAnnotation] = []
@@ -193,7 +190,7 @@ extension TheaterMapViewController: CLLocationManagerDelegate {
         if let coordinate = locations.last?.coordinate {
             setRegionAndAnnotation(center: coordinate, title: "내 현재 위치")
         }
-        locationManager.startUpdatingLocation()
+        locationManager.stopUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

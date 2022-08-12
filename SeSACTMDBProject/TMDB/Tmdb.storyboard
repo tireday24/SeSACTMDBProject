@@ -279,20 +279,52 @@
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="69.642857142857139"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="WWY-se-wIP">
+        <!--Search Name View Controller-->
+        <scene sceneID="kFe-fK-w27">
             <objects>
-                <viewController id="ESO-CG-ufl" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="L0S-3y-xZ2">
+                <viewController storyboardIdentifier="SearchNameViewController" id="sx9-Ud-ql7" customClass="SearchNameViewController" customModule="SeSACTMDBProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w5Y-pO-WPA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="02O-pI-EKR"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="06g-us-gKk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vWc-cW-xaA">
+                                    <size key="itemSize" width="380" height="441"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TmdbCollectionViewCell" id="UUb-tN-Rpd" customClass="TmdbCollectionViewCell" customModule="SeSACTMDBProject" customModuleProvider="target">
+                                        <rect key="frame" x="17" y="0.0" width="380" height="441"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OIU-lV-sGm">
+                                            <rect key="frame" x="0.0" y="0.0" width="380" height="441"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="380" height="441"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="l5l-Di-aAo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="06g-us-gKk" firstAttribute="leading" secondItem="l5l-Di-aAo" secondAttribute="leading" id="FXe-ud-rOP"/>
+                            <constraint firstAttribute="bottom" secondItem="06g-us-gKk" secondAttribute="bottom" id="H6r-eG-C6H"/>
+                            <constraint firstItem="06g-us-gKk" firstAttribute="trailing" secondItem="l5l-Di-aAo" secondAttribute="trailing" id="eaw-n9-48s"/>
+                            <constraint firstItem="06g-us-gKk" firstAttribute="top" secondItem="l5l-Di-aAo" secondAttribute="top" id="jXK-59-SxO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="06g-us-gKk" id="qkY-EJ-zl2"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VYO-wC-flg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dp7-1P-VrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="70"/>
+            <point key="canvasLocation" x="1778" y="70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MEY-uT-3Th">

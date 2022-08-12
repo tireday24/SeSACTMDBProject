@@ -44,7 +44,7 @@ class TmdbViewController: UIViewController {
 
     func naviBarButtonDesign() {
         let item = navigationItem
-        item.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.triangle"), style: .plain, target: self, action: #selector(listbuttonClicked))
+        item.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "location"), style: .plain, target: self, action: #selector(listbuttonClicked))
         item.leftBarButtonItem?.tintColor = .blue
         item.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(rightButtonClicked))
         
@@ -71,7 +71,11 @@ class TmdbViewController: UIViewController {
     }
     
     @objc func rightButtonClicked() {
-        
+        let sb = UIStoryboard(name: "Tmdb", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: SearchNameViewController.identifier) as? SearchNameViewController else {return}
+        let nv = UINavigationController(rootViewController: vc)
+        nv.modalPresentationStyle = .fullScreen
+        self.present(nv, animated: true)
     }
     
     
