@@ -11,12 +11,14 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-class TmdbViewController: UIViewController {
+var ud = UserDefaults.standard
+
+class TmdbViewController: UIViewController{
+    
+    static let identifier = "TmdbViewController"
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
 
-    
     var movieList: [TmdbInfo] = []
     var keyList: [Int : String] = [:]
     let genreSingleton = Genre.shared
@@ -38,8 +40,11 @@ class TmdbViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.prefetchDataSource = self
-        
         layout()
+        
+        UserDefaults.standard.set("NewUser", forKey: "User")
+        
+        
     }
 
     func naviBarButtonDesign() {
@@ -89,7 +94,7 @@ class TmdbViewController: UIViewController {
     
     
     //접두어 -> AF 알라모파이어에서 url주소로 들어가고 get 방식 유효성 검사(상태코드) 실행 ex) 200 = 성공 response 데이터 가져오겠다
-    AF.request(url, method: .get).validate().responseJSON { response in
+    AF.request(url, method: .get).validate().responseData { response in
         switch response.result {
         case .success(let value):
             let json = JSON(value)

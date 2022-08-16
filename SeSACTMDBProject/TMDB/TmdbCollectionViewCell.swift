@@ -14,6 +14,7 @@ protocol ToWebLink {
 class TmdbCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "TmdbCollectionViewCell"
+    
 
     @IBOutlet weak var releaseDataLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!

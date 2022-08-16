@@ -11,6 +11,13 @@
 		812EC5C228A679AD0064A3DB /* SearchNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812EC5C128A679AD0064A3DB /* SearchNameViewController.swift */; };
 		813B797E289CECF300AC6BAD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B797D289CECF300AC6BAD /* WebViewController.swift */; };
 		813B7980289CED0900AC6BAD /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813B797F289CED0900AC6BAD /* WebView.storyboard */; };
+		81933ECA28AB648A001C0C48 /* TmdbFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81933EC628AB6473001C0C48 /* TmdbFrameWork.framework */; };
+		81933ECB28AB648A001C0C48 /* TmdbFrameWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81933EC628AB6473001C0C48 /* TmdbFrameWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		81933ED728AB6D64001C0C48 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81933ED628AB6D64001C0C48 /* Intro.storyboard */; };
+		81933EDA28AB6DDC001C0C48 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81933ED928AB6DDC001C0C48 /* IntroViewController.swift */; };
+		81933EDC28AB6DED001C0C48 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81933EDB28AB6DED001C0C48 /* FirstViewController.swift */; };
+		81933EDE28AB6DF5001C0C48 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81933EDD28AB6DF5001C0C48 /* SecondViewController.swift */; };
+		81933EE028AB6DFE001C0C48 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81933EDF28AB6DFE001C0C48 /* ThirdViewController.swift */; };
 		8199472828A4CD95001729B9 /* TheaterMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8199472728A4CD95001729B9 /* TheaterMap.storyboard */; };
 		8199472A28A4CDA5001729B9 /* TheaterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199472928A4CDA5001729B9 /* TheaterMapViewController.swift */; };
 		8199472C28A4CF4A001729B9 /* MapStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8199472B28A4CF4A001729B9 /* MapStruct.swift */; };
@@ -53,11 +60,48 @@
 		81BEFFBE2899FABC00CE5B79 /* Example2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BEFFBD2899FABC00CE5B79 /* Example2.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		81933EC528AB6473001C0C48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81933EC028AB6473001C0C48 /* TmdbFrameWork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 81933E9A28AB5D05001C0C48;
+			remoteInfo = TmdbFrameWork;
+		};
+		81933EC728AB6473001C0C48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81933EC028AB6473001C0C48 /* TmdbFrameWork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 81933EA428AB5D05001C0C48;
+			remoteInfo = TmdbFrameWorkTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		81933ECC28AB648A001C0C48 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				81933ECB28AB648A001C0C48 /* TmdbFrameWork.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		810B29D628A22B7D00E6FFE8 /* MovieCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCardView.xib; sourceTree = "<group>"; };
 		812EC5C128A679AD0064A3DB /* SearchNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNameViewController.swift; sourceTree = "<group>"; };
 		813B797D289CECF300AC6BAD /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		813B797F289CED0900AC6BAD /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		81933EC028AB6473001C0C48 /* TmdbFrameWork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TmdbFrameWork.xcodeproj; path = ../TmdbFrameWork/TmdbFrameWork.xcodeproj; sourceTree = "<group>"; };
+		81933ED628AB6D64001C0C48 /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
+		81933ED928AB6DDC001C0C48 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		81933EDB28AB6DED001C0C48 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		81933EDD28AB6DF5001C0C48 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		81933EDF28AB6DFE001C0C48 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		8199472728A4CD95001729B9 /* TheaterMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TheaterMap.storyboard; sourceTree = "<group>"; };
 		8199472928A4CDA5001729B9 /* TheaterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterMapViewController.swift; sourceTree = "<group>"; };
 		8199472B28A4CF4A001729B9 /* MapStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapStruct.swift; sourceTree = "<group>"; };
@@ -107,6 +151,7 @@
 				81999E3F289A53ED00A1C4EB /* Kingfisher in Frameworks */,
 				81999E3C289A53E100A1C4EB /* SwiftyJSON in Frameworks */,
 				81999E39289A53CE00A1C4EB /* Alamofire in Frameworks */,
+				81933ECA28AB648A001C0C48 /* TmdbFrameWork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +185,34 @@
 				813B797F289CED0900AC6BAD /* WebView.storyboard */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		81933EC128AB6473001C0C48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81933EC628AB6473001C0C48 /* TmdbFrameWork.framework */,
+				81933EC828AB6473001C0C48 /* TmdbFrameWorkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81933EC928AB648A001C0C48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81933ED528AB6C93001C0C48 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				81933ED928AB6DDC001C0C48 /* IntroViewController.swift */,
+				81933EDB28AB6DED001C0C48 /* FirstViewController.swift */,
+				81933EDD28AB6DF5001C0C48 /* SecondViewController.swift */,
+				81933EDF28AB6DFE001C0C48 /* ThirdViewController.swift */,
+				81933ED628AB6D64001C0C48 /* Intro.storyboard */,
+			);
+			path = Intro;
 			sourceTree = "<group>";
 		};
 		8199472628A4CD6B001729B9 /* Map */ = {
@@ -201,9 +274,11 @@
 		81BEFF912899F6B600CE5B79 = {
 			isa = PBXGroup;
 			children = (
+				81933EC028AB6473001C0C48 /* TmdbFrameWork.xcodeproj */,
 				81BEFFB12899F7D300CE5B79 /* .gitignore */,
 				81BEFF9C2899F6B600CE5B79 /* SeSACTMDBProject */,
 				81BEFF9B2899F6B600CE5B79 /* Products */,
+				81933EC928AB648A001C0C48 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +293,7 @@
 		81BEFF9C2899F6B600CE5B79 /* SeSACTMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				81933ED528AB6C93001C0C48 /* Intro */,
 				81A05AF628A68CBB00985C3E /* APIManager */,
 				812EC5AF28A66A930064A3DB /* Search */,
 				8199472628A4CD6B001729B9 /* Map */,
@@ -267,6 +343,7 @@
 				81BEFF962899F6B600CE5B79 /* Sources */,
 				81BEFF972899F6B600CE5B79 /* Frameworks */,
 				81BEFF982899F6B600CE5B79 /* Resources */,
+				81933ECC28AB648A001C0C48 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,12 +392,35 @@
 			);
 			productRefGroup = 81BEFF9B2899F6B600CE5B79 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 81933EC128AB6473001C0C48 /* Products */;
+					ProjectRef = 81933EC028AB6473001C0C48 /* TmdbFrameWork.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				81BEFF992899F6B600CE5B79 /* SeSACTMDBProject */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		81933EC628AB6473001C0C48 /* TmdbFrameWork.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = TmdbFrameWork.framework;
+			remoteRef = 81933EC528AB6473001C0C48 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		81933EC828AB6473001C0C48 /* TmdbFrameWorkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TmdbFrameWorkTests.xctest;
+			remoteRef = 81933EC728AB6473001C0C48 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		81BEFF982899F6B600CE5B79 /* Resources */ = {
@@ -332,6 +432,7 @@
 				8199871D289BAF9C00B01C42 /* CastMemberTableViewCell.xib in Resources */,
 				81B5FEB628A22F6A00E4AE48 /* MovieCard.storyboard in Resources */,
 				81BEFFA72899F6B600CE5B79 /* Assets.xcassets in Resources */,
+				81933ED728AB6D64001C0C48 /* Intro.storyboard in Resources */,
 				8199472828A4CD95001729B9 /* TheaterMap.storyboard in Resources */,
 				81B5FEBA28A2310A00E4AE48 /* MovieCardCollectionViewCell.xib in Resources */,
 				8199870C289B996000B01C42 /* Cast.storyboard in Resources */,
@@ -350,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81933EE028AB6DFE001C0C48 /* ThirdViewController.swift in Sources */,
 				81998710289BA27100B01C42 /* CastInfo.swift in Sources */,
 				812EC5C228A679AD0064A3DB /* SearchNameViewController.swift in Sources */,
 				81BEFFA22899F6B600CE5B79 /* ViewController.swift in Sources */,
@@ -360,6 +462,7 @@
 				8199472C28A4CF4A001729B9 /* MapStruct.swift in Sources */,
 				81B5FEBF28A2359400E4AE48 /* MovieCardViewController.swift in Sources */,
 				81998718289BAEAF00B01C42 /* OverviewTableViewCell.swift in Sources */,
+				81933EDC28AB6DED001C0C48 /* FirstViewController.swift in Sources */,
 				8199472E28A51FD3001729B9 /* MapViewController.swift in Sources */,
 				81BEFFB42899F82400CE5B79 /* SearchViewController.swift in Sources */,
 				81BEFFA02899F6B600CE5B79 /* SceneDelegate.swift in Sources */,
@@ -367,12 +470,14 @@
 				8199870A289B936E00B01C42 /* CastViewController.swift in Sources */,
 				81BEFFB62899F88E00CE5B79 /* APIKey.swift in Sources */,
 				8199870E289B9B4F00B01C42 /* CastTableViewCell.swift in Sources */,
+				81933EDE28AB6DF5001C0C48 /* SecondViewController.swift in Sources */,
 				81999E45289A8F4800A1C4EB /* Singleton.swift in Sources */,
 				81999E41289A579800A1C4EB /* TmdbInfo.swift in Sources */,
 				8199472A28A4CDA5001729B9 /* TheaterMapViewController.swift in Sources */,
 				813B797E289CECF300AC6BAD /* WebViewController.swift in Sources */,
 				81B5FEB428A22E1F00E4AE48 /* MovieCardView.swift in Sources */,
 				81BEFFB82899F9BB00CE5B79 /* Constant.swift in Sources */,
+				81933EDA28AB6DDC001C0C48 /* IntroViewController.swift in Sources */,
 				81B5FEBC28A2332200E4AE48 /* MovieCardTableViewCell.swift in Sources */,
 				81BEFFBE2899FABC00CE5B79 /* Example2.swift in Sources */,
 				8199871C289BAF9C00B01C42 /* CastMemberTableViewCell.swift in Sources */,
