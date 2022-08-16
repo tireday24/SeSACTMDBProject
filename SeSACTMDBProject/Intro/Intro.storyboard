@@ -23,13 +23,43 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQl-ct-maA">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="U7x-w0-duC"/>
+                                    <constraint firstAttribute="width" constant="300" id="xFI-XU-tCg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="300"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbQ-DX-jWa">
+                                <rect key="frame" x="140.5" y="692" width="133" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="오늘 하루 보지 않기"/>
+                                <connections>
+                                    <action selector="stopButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uuA-Vz-UnC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IbQ-DX-jWa" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="DvF-lB-k2O"/>
+                            <constraint firstItem="IbQ-DX-jWa" firstAttribute="top" secondItem="oQl-ct-maA" secondAttribute="bottom" constant="94" id="HMT-tm-IlE"/>
+                            <constraint firstItem="oQl-ct-maA" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="NvP-A9-PgR"/>
+                            <constraint firstItem="oQl-ct-maA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="uZU-wq-xqm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stopButton" destination="IbQ-DX-jWa" id="Y5H-LP-Wre"/>
+                        <outlet property="tLable" destination="oQl-ct-maA" id="xdT-EU-qN1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="40"/>
+            <point key="canvasLocation" x="56.521739130434788" y="39.508928571428569"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="3J8-Mr-yYf">
@@ -38,9 +68,49 @@
                     <view key="view" contentMode="scaleToFill" id="n2a-PF-gje">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="not-oB-ozj">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="BM1-0A-KTJ"/>
+                                    <constraint firstAttribute="height" constant="300" id="aOj-lN-aDx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPV-TA-H85">
+                                <rect key="frame" x="140.5" y="693" width="133" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="오늘 하루 보지 않기"/>
+                                <connections>
+                                    <action selector="stopButtonClicked:" destination="3z2-gy-Bem" eventType="touchUpInside" id="sJs-eJ-o4j"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJv-hX-A1d">
+                                <rect key="frame" x="107" y="196" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Yu4-Mp-Q3w"/>
+                                    <constraint firstAttribute="width" constant="200" id="ogp-VN-9TH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gUG-b6-rmx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="not-oB-ozj" firstAttribute="top" secondItem="ZJv-hX-A1d" secondAttribute="bottom" constant="52" id="A7a-Nf-1TG"/>
+                            <constraint firstItem="ZJv-hX-A1d" firstAttribute="centerX" secondItem="n2a-PF-gje" secondAttribute="centerX" id="CzM-QJ-3fk"/>
+                            <constraint firstItem="not-oB-ozj" firstAttribute="centerX" secondItem="n2a-PF-gje" secondAttribute="centerX" id="INT-Yq-HjO"/>
+                            <constraint firstItem="not-oB-ozj" firstAttribute="centerY" secondItem="n2a-PF-gje" secondAttribute="centerY" id="MqF-eA-laF"/>
+                            <constraint firstItem="HPV-TA-H85" firstAttribute="centerX" secondItem="n2a-PF-gje" secondAttribute="centerX" id="SNa-XB-RY1"/>
+                            <constraint firstItem="HPV-TA-H85" firstAttribute="top" secondItem="not-oB-ozj" secondAttribute="bottom" constant="95" id="dQq-vO-9g1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stopButton" destination="HPV-TA-H85" id="rfB-ff-sTM"/>
+                        <outlet property="theaterImage" destination="not-oB-ozj" id="v0G-xB-fwm"/>
+                        <outlet property="theaterLable" destination="ZJv-hX-A1d" id="Axg-rc-o06"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTQ-cb-omq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,9 +123,49 @@
                     <view key="view" contentMode="scaleToFill" id="f0y-x8-WLT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M1j-P3-zzh">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="9a8-fO-Aid"/>
+                                    <constraint firstAttribute="width" constant="300" id="Cbk-dI-Lmg"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaj-OF-3gg">
+                                <rect key="frame" x="140.5" y="692" width="133" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="오늘 하루 보지 않기"/>
+                                <connections>
+                                    <action selector="stopButtonClicked:" destination="uvv-9H-13m" eventType="touchUpInside" id="VOD-IO-yWr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tb-8c-h2C">
+                                <rect key="frame" x="107" y="190" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="A2F-gd-62P"/>
+                                    <constraint firstAttribute="width" constant="200" id="v54-th-fSB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="f9Q-CY-K0E"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yaj-OF-3gg" firstAttribute="top" secondItem="M1j-P3-zzh" secondAttribute="bottom" constant="94" id="IS8-ig-Hhk"/>
+                            <constraint firstItem="3Tb-8c-h2C" firstAttribute="centerX" secondItem="f0y-x8-WLT" secondAttribute="centerX" id="OJf-0E-Vdf"/>
+                            <constraint firstItem="M1j-P3-zzh" firstAttribute="centerY" secondItem="f0y-x8-WLT" secondAttribute="centerY" id="pe4-ze-rhE"/>
+                            <constraint firstItem="M1j-P3-zzh" firstAttribute="centerX" secondItem="f0y-x8-WLT" secondAttribute="centerX" id="rtE-Wp-upb"/>
+                            <constraint firstItem="yaj-OF-3gg" firstAttribute="centerX" secondItem="f0y-x8-WLT" secondAttribute="centerX" id="v4x-Hy-Q52"/>
+                            <constraint firstItem="M1j-P3-zzh" firstAttribute="top" secondItem="3Tb-8c-h2C" secondAttribute="bottom" constant="58" id="xJZ-6D-BMs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="movieImageView" destination="M1j-P3-zzh" id="bQz-JI-Pmm"/>
+                        <outlet property="movieLabel" destination="3Tb-8c-h2C" id="9i2-A6-has"/>
+                        <outlet property="stopButton" destination="yaj-OF-3gg" id="aJ8-Ah-uHq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3A-OA-tLG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,6 +175,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

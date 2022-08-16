@@ -17,6 +17,7 @@ class IntroViewController: UIPageViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .black
+        ud.set("NewUser", forKey: "User")
        
         createPageViewController()
         configurePageViewController()

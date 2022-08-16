@@ -42,7 +42,7 @@ class TmdbViewController: UIViewController{
         collectionView.prefetchDataSource = self
         layout()
         
-        UserDefaults.standard.set("NewUser", forKey: "User")
+        ud.string(forKey: "User")
         
         
     }
