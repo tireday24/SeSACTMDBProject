@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 import Kingfisher
 
@@ -57,13 +58,13 @@ extension MovieCardViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCardTableViewCell.identifier, for: indexPath) as? MovieCardTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieCardTableViewCell.reuseIdentifier, for: indexPath) as? MovieCardTableViewCell else { return UITableViewCell() }
         
         cell.backgroundColor = .clear
         cell.movieCollectionView.backgroundColor = .clear
         cell.movieCollectionView.delegate = self
         cell.movieCollectionView.dataSource = self
-        cell.movieCollectionView.register(UINib(nibName: MovieCardCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: MovieCardCollectionViewCell.identifier)
+        cell.movieCollectionView.register(UINib(nibName: MovieCardCollectionViewCell.reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: MovieCardCollectionViewCell.reuseIdentifier)
         cell.movieCollectionView.tag = indexPath.section
         cell.movieCollectionView.reloadData()
         cell.titleLabel.text = "\(TMDBAPIManager.shared.movieList[indexPath.section].0) Similar Contents!"
@@ -86,7 +87,7 @@ extension MovieCardViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCardCollectionViewCell.identifier, for: indexPath) as? MovieCardCollectionViewCell else { return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCardCollectionViewCell.reuseIdentifier, for: indexPath) as? MovieCardCollectionViewCell else { return UICollectionViewCell()}
 
         cell.movieCardView.posterImageView.backgroundColor = .black
         cell.movieCardView.posterImageView.contentMode = .scaleToFill

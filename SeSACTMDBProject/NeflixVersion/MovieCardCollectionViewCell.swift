@@ -6,10 +6,9 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 class MovieCardCollectionViewCell: UICollectionViewCell {
-    
-    static let identifier = "MovieCardCollectionViewCell"
 
     @IBOutlet weak var movieCardView: MovieCardView!
     

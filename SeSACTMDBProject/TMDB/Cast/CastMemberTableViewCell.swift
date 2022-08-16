@@ -6,10 +6,9 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 class CastMemberTableViewCell: UITableViewCell {
-    
-    static let identifier = "CastMemberTableViewCell"
     
     @IBOutlet weak var actorImageView: UIImageView!
     @IBOutlet weak var realNameLabel: UILabel!

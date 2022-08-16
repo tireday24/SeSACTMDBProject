@@ -6,11 +6,9 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 class OverviewTableViewCell: UITableViewCell {
-
-    static let identifier = "OverviewTableViewCell"
-
 
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var expandButton: UIButton!

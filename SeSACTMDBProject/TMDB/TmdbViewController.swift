@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 import Alamofire
 import SwiftyJSON
@@ -14,8 +15,6 @@ import Kingfisher
 var ud = UserDefaults.standard
 
 class TmdbViewController: UIViewController{
-    
-    static let identifier = "TmdbViewController"
     
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -69,7 +68,7 @@ class TmdbViewController: UIViewController{
     
     @objc func listbuttonClicked() {
         let sb = UIStoryboard(name: "TheaterMap", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: TheaterMapViewController.identifier) as? TheaterMapViewController else {return}
+        guard let vc = sb.instantiateViewController(withIdentifier: TheaterMapViewController.reuseIdentifier) as? TheaterMapViewController else {return}
         let nv = UINavigationController(rootViewController: vc)
         nv.modalPresentationStyle = .fullScreen
         self.present(nv, animated: true)
@@ -77,7 +76,7 @@ class TmdbViewController: UIViewController{
     
     @objc func rightButtonClicked() {
         let sb = UIStoryboard(name: "Tmdb", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: SearchNameViewController.identifier) as? SearchNameViewController else {return}
+        guard let vc = sb.instantiateViewController(withIdentifier: SearchNameViewController.reuseIdentifier) as? SearchNameViewController else {return}
         let nv = UINavigationController(rootViewController: vc)
         nv.modalPresentationStyle = .fullScreen
         self.present(nv, animated: true)
@@ -174,7 +173,7 @@ extension TmdbViewController:  UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TmdbCollectionViewCell.identifier, for: indexPath) as? TmdbCollectionViewCell else { return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TmdbCollectionViewCell.reuseIdentifier, for: indexPath) as? TmdbCollectionViewCell else { return UICollectionViewCell()}
         
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "yyyy-MM-dd"
@@ -209,7 +208,7 @@ extension TmdbViewController:  UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Cast", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: CastViewController.identifier) as? CastViewController else {return}
+        guard let vc = sb.instantiateViewController(withIdentifier: CastViewController.reuseIdentifier) as? CastViewController else {return}
         
         vc.castId = movieList[indexPath.item].id
 
@@ -254,7 +253,7 @@ extension TmdbViewController {
         videoAPI(id: movieList[sender.tag].id) { key in
             print(key, "sdsdadsad")
             let sb = UIStoryboard(name: "WebView", bundle: nil)
-            guard let vc = sb.instantiateViewController(withIdentifier: WebViewController.identifer) as? WebViewController else { return }
+            guard let vc = sb.instantiateViewController(withIdentifier: WebViewController.reuseIdentifier) as? WebViewController else { return }
             vc.videoKey = key
             let nv = UINavigationController(rootViewController: vc)
             nv.modalPresentationStyle = .fullScreen

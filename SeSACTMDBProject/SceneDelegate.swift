@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if ud.string(forKey: "User") == nil {
 
             let sb = UIStoryboard(name: "Intro", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: IntroViewController.identifier) as! IntroViewController
+            let vc = sb.instantiateViewController(withIdentifier: IntroViewController.reuseIdentifier) as! IntroViewController
 
             window?.rootViewController = UINavigationController(rootViewController: vc)
             window?.makeKeyAndVisible()
@@ -29,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window = UIWindow(windowScene: scene as! UIWindowScene)
 
             let sb = UIStoryboard(name: "Tmdb", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: TmdbViewController.identifier) as! TmdbViewController
+            let vc = sb.instantiateViewController(withIdentifier: TmdbViewController.reuseIdentifier) as! TmdbViewController
 
             window?.rootViewController = UINavigationController(rootViewController: vc)
             window?.makeKeyAndVisible()

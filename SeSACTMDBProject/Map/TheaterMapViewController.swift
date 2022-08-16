@@ -10,10 +10,6 @@ import MapKit
 import CoreLocation
 
 class TheaterMapViewController: UIViewController {
-    
-    
-    
-    static let identifier = "TheaterMapViewController"
 
     @IBOutlet weak var map: MKMapView!
     
@@ -35,8 +31,6 @@ class TheaterMapViewController: UIViewController {
        
     }
     
-    
-    
     @objc func goBackButtonClicked() {
        dismiss(animated: true)
    }
@@ -47,7 +41,7 @@ class TheaterMapViewController: UIViewController {
 
     
     func setRegionAndAnnotation(center: CLLocationCoordinate2D, title: String) {
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 2000, longitudinalMeters: 2000)
         map.setRegion(region, animated: true)
         
         let annotation = MKPointAnnotation()

@@ -6,13 +6,13 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var tLable: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     
-    static let identifier = "FirstViewController"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +47,10 @@ class FirstViewController: UIViewController {
     
     @IBAction func stopButtonClicked(_ sender: UIButton) {
         let sb = UIStoryboard(name: "Tmdb", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: TmdbViewController.identifier) as? TmdbViewController else {return }
+        guard let vc = sb.instantiateViewController(withIdentifier: TmdbViewController.reuseIdentifier) as? TmdbViewController else {return }
         let nv = UINavigationController(rootViewController: vc)
         nv.modalPresentationStyle = .fullScreen
         self.present(nv, animated: true)
-        
-        
         
     }
     

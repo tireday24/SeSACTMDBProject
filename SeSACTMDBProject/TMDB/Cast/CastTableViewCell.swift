@@ -6,10 +6,10 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 class CastTableViewCell: UITableViewCell {
     
-    static let identifier = "CastTableViewCell"
     
     
 }

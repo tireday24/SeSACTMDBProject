@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 import Alamofire
 import SwiftyJSON
@@ -13,10 +14,8 @@ import Kingfisher
 
 class SearchNameViewController: UIViewController {
     
-    static let identifier = "SearchNameViewController"
     var movieList: [String] = []
     var list: [String] = []
-   
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -57,7 +56,7 @@ extension SearchNameViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TmdbCollectionViewCell.identifier, for: indexPath) as? TmdbCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TmdbCollectionViewCell.reuseIdentifier, for: indexPath) as? TmdbCollectionViewCell else {
             return UICollectionViewCell()
         }
         

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 import Alamofire
 import SwiftyJSON
@@ -20,7 +21,6 @@ class CastViewController: UIViewController {
     @IBOutlet weak var moviePoster: UIImageView!
     
     var castList: [CastInfo] = []
-    static let identifier = "CastViewController"
     let castViewSection: [String] = ["Overview", "Cast"]
     var isExpanded = false
     
@@ -42,8 +42,8 @@ class CastViewController: UIViewController {
         requestCastApi()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: OverviewTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: OverviewTableViewCell.identifier)
-        tableView.register(UINib(nibName: CastMemberTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CastMemberTableViewCell.identifier)
+        tableView.register(UINib(nibName: OverviewTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: OverviewTableViewCell.reuseIdentifier)
+        tableView.register(UINib(nibName: CastMemberTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CastMemberTableViewCell.reuseIdentifier)
         
         movieNameLabel.text = castTitle
         let backgroundUrl = URL(string: "\(EndPoint.imgURL)\(bgUrl)")
@@ -122,14 +122,14 @@ extension CastViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier) as! OverviewTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.reuseIdentifier) as! OverviewTableViewCell
             cell.overviewLabel.text = castOverview
             cell.expandButton.setImage(UIImage(systemName: isExpanded ? "chevron.down" : "chevron.up"), for: .normal)
             cell.overviewLabel.numberOfLines = 0
             return cell
             
         } else if indexPath.section == 1 {
-           let cell = tableView.dequeueReusableCell(withIdentifier: CastMemberTableViewCell.identifier) as! CastMemberTableViewCell
+           let cell = tableView.dequeueReusableCell(withIdentifier: CastMemberTableViewCell.reuseIdentifier) as! CastMemberTableViewCell
             
             print(castList.count, "================")
             

@@ -6,10 +6,9 @@
 //
 
 import UIKit
+import TmdbFrameWork
 
 class IntroViewController: UIPageViewController {
-    
-    static let identifier = "IntroViewController"
     
     var pageViewControllerList: [UIViewController] = []
     
@@ -25,9 +24,9 @@ class IntroViewController: UIPageViewController {
     
     func createPageViewController() {
         let sb = UIStoryboard(name: "Intro", bundle: nil)
-        let vc1 = sb.instantiateViewController(withIdentifier: FirstViewController.identifier) as! FirstViewController
-        let vc2 = sb.instantiateViewController(withIdentifier: SecondViewController.identifier) as! SecondViewController
-        let vc3 = sb.instantiateViewController(withIdentifier: ThirdViewController.identifier) as! ThirdViewController
+        let vc1 = sb.instantiateViewController(withIdentifier: FirstViewController.reuseIdentifier) as! FirstViewController
+        let vc2 = sb.instantiateViewController(withIdentifier: SecondViewController.reuseIdentifier) as! SecondViewController
+        let vc3 = sb.instantiateViewController(withIdentifier: ThirdViewController.reuseIdentifier) as! ThirdViewController
         pageViewControllerList = [vc1, vc2, vc3]
     }
     
