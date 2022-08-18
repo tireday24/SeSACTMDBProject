@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		810B29D728A22B7D00E6FFE8 /* MovieCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 810B29D628A22B7D00E6FFE8 /* MovieCardView.xib */; };
 		812EC5C228A679AD0064A3DB /* SearchNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812EC5C128A679AD0064A3DB /* SearchNameViewController.swift */; };
+		81358E5F28AE5776006DDF2A /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81358E5E28AE5776006DDF2A /* UIViewController + Extension.swift */; };
 		813B797E289CECF300AC6BAD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813B797D289CECF300AC6BAD /* WebViewController.swift */; };
 		813B7980289CED0900AC6BAD /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813B797F289CED0900AC6BAD /* WebView.storyboard */; };
 		81933ECA28AB648A001C0C48 /* TmdbFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81933EC628AB6473001C0C48 /* TmdbFrameWork.framework */; };
@@ -94,6 +95,7 @@
 /* Begin PBXFileReference section */
 		810B29D628A22B7D00E6FFE8 /* MovieCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCardView.xib; sourceTree = "<group>"; };
 		812EC5C128A679AD0064A3DB /* SearchNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNameViewController.swift; sourceTree = "<group>"; };
+		81358E5E28AE5776006DDF2A /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		813B797D289CECF300AC6BAD /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		813B797F289CED0900AC6BAD /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		81933EC028AB6473001C0C48 /* TmdbFrameWork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TmdbFrameWork.xcodeproj; path = ../TmdbFrameWork/TmdbFrameWork.xcodeproj; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 				812EC5C128A679AD0064A3DB /* SearchNameViewController.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		81358E5B28AE5729006DDF2A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				81358E5E28AE5776006DDF2A /* UIViewController + Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		813B797C289CECCA00AC6BAD /* WebView */ = {
@@ -293,6 +303,7 @@
 		81BEFF9C2899F6B600CE5B79 /* SeSACTMDBProject */ = {
 			isa = PBXGroup;
 			children = (
+				81358E5B28AE5729006DDF2A /* Extension */,
 				81933ED528AB6C93001C0C48 /* Intro */,
 				81A05AF628A68CBB00985C3E /* APIManager */,
 				812EC5AF28A66A930064A3DB /* Search */,
@@ -461,6 +472,7 @@
 				81B5FEB928A2310A00E4AE48 /* MovieCardCollectionViewCell.swift in Sources */,
 				8199472C28A4CF4A001729B9 /* MapStruct.swift in Sources */,
 				81B5FEBF28A2359400E4AE48 /* MovieCardViewController.swift in Sources */,
+				81358E5F28AE5776006DDF2A /* UIViewController + Extension.swift in Sources */,
 				81998718289BAEAF00B01C42 /* OverviewTableViewCell.swift in Sources */,
 				81933EDC28AB6DED001C0C48 /* FirstViewController.swift in Sources */,
 				8199472E28A51FD3001729B9 /* MapViewController.swift in Sources */,

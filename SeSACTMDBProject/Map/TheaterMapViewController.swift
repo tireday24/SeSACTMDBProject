@@ -41,7 +41,8 @@ class TheaterMapViewController: UIViewController {
 
     
     func setRegionAndAnnotation(center: CLLocationCoordinate2D, title: String) {
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 2000, longitudinalMeters: 2000)
+        let standard = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
+        let region = MKCoordinateRegion(center: standard, latitudinalMeters: 2000, longitudinalMeters: 2000)
         map.setRegion(region, animated: true)
         
         let annotation = MKPointAnnotation()
@@ -65,7 +66,7 @@ class TheaterMapViewController: UIViewController {
     }
     
     func setRegionAndAnnotationSecond(center: CLLocationCoordinate2D, theater: [Theater]) {
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 3000, longitudinalMeters: 3000)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 20000, longitudinalMeters: 20000)
         map.setRegion(region, animated: true)
         
         var theaterInfo:[MKPointAnnotation] = []
