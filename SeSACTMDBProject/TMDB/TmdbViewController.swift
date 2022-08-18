@@ -67,19 +67,17 @@ class TmdbViewController: UIViewController{
     }
     
     @objc func listbuttonClicked() {
-        let sb = UIStoryboard(name: "TheaterMap", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: TheaterMapViewController.reuseIdentifier) as? TheaterMapViewController else {return}
-        let nv = UINavigationController(rootViewController: vc)
-        nv.modalPresentationStyle = .fullScreen
-        self.present(nv, animated: true)
+        
+        transitionViewController(storyboard: "TheaterMap", vc: TheaterMapViewController(), transiton: .present) { _ in
+            
+        }
     }
     
     @objc func rightButtonClicked() {
-        let sb = UIStoryboard(name: "Tmdb", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: SearchNameViewController.reuseIdentifier) as? SearchNameViewController else {return}
-        let nv = UINavigationController(rootViewController: vc)
-        nv.modalPresentationStyle = .fullScreen
-        self.present(nv, animated: true)
+        
+        transitionViewController(storyboard: "Tmdb", vc: SearchNameViewController(), transiton: .present) { _ in
+            
+        }
     }
     
     

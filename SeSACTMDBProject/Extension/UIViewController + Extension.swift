@@ -19,11 +19,11 @@ extension UIViewController {
         
         switch transiton {
         case .push:
-            guard let vc = sb.instantiateViewController(withIdentifier: String(describing: vc)) as? T else { return }
+            guard let vc = sb.instantiateViewController(withIdentifier: T.reuseIdentifier) as? T else { return }
             complition(vc)
             navigationController?.pushViewController(vc, animated: true)
         case .present:
-            guard let vc = sb.instantiateViewController(withIdentifier: String(describing: vc)) as? T else { return }
+            guard let vc = sb.instantiateViewController(withIdentifier: T.reuseIdentifier) as? T else { return }
             let nv = UINavigationController(rootViewController: vc)
             nv.modalPresentationStyle = .fullScreen
             present(nv, animated: true)
